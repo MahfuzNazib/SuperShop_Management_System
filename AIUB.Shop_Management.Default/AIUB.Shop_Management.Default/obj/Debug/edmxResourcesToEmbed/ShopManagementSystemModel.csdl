@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SuperShopManagementSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JoiningDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Point" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sell" Relationship="Self.FK_Sells_Customer" FromRole="Customer" ToRole="Sells" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmpContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JoiningDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_Brand">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="Product_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Product_Product_Brand" FromRole="Product_Brand" ToRole="Product" />
+    <NavigationProperty Name="Purchases" Relationship="Self.FK_Purchase_Product_Brand" FromRole="Product_Brand" ToRole="Purchase" />
+  </EntityType>
+  <EntityType Name="Sell">
+    <Key>
+      <PropertyRef Name="SellsId" />
+    </Key>
+    <Property Name="SellsId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SellsDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Sells_Customer" FromRole="Sells" ToRole="Customer" />
+    <NavigationProperty Name="Sells_Details" Relationship="Self.FK_Sells_Details_Sells" FromRole="Sells" ToRole="Sells_Details" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="SellsPrice" />
+      <PropertyRef Name="Unit" />
+    </Key>
+    <Property Name="ProductId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SellsPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product_Brand" Relationship="Self.FK_Product_Product_Brand" FromRole="Product" ToRole="Product_Brand" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="PurchaseDate" />
+      <PropertyRef Name="UnitPrice" />
+      <PropertyRef Name="PurchaseQuentity" />
+    </Key>
+    <Property Name="ProductId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PurchaseQuentity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product_Brand" Relationship="Self.FK_Purchase_Product_Brand" FromRole="Purchase" ToRole="Product_Brand" />
+  </EntityType>
+  <EntityType Name="Sells_Details">
+    <Key>
+      <PropertyRef Name="SellsDetailsId" />
+      <PropertyRef Name="SellsId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="SellsQuentity" />
+      <PropertyRef Name="SellsPrice" />
+      <PropertyRef Name="Amount" />
+    </Key>
+    <Property Name="SellsDetailsId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SellsId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SellsQuentity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SellsPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Sell" Relationship="Self.FK_Sells_Details_Sells" FromRole="Sells_Details" ToRole="Sells" />
+  </EntityType>
+  <Association Name="FK_Sells_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Sells" Type="Self.Sell" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Sells">
+        <PropertyRef Name="SellsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product_Brand">
+    <End Role="Product_Brand" Type="Self.Product_Brand" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Brand">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Product_Brand">
+    <End Role="Product_Brand" Type="Self.Product_Brand" Multiplicity="1" />
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Brand">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sells_Details_Sells">
+    <End Role="Sells" Type="Self.Sell" Multiplicity="1" />
+    <End Role="Sells_Details" Type="Self.Sells_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sells">
+        <PropertyRef Name="SellsId" />
+      </Principal>
+      <Dependent Role="Sells_Details">
+        <PropertyRef Name="SellsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SuperShopManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Product_Brand" EntityType="Self.Product_Brand" />
+    <EntitySet Name="Sells" EntityType="Self.Sell" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+    <EntitySet Name="Sells_Details" EntityType="Self.Sells_Details" />
+    <AssociationSet Name="FK_Sells_Customer" Association="Self.FK_Sells_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Sells" EntitySet="Sells" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product_Brand" Association="Self.FK_Product_Product_Brand">
+      <End Role="Product_Brand" EntitySet="Product_Brand" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Product_Brand" Association="Self.FK_Purchase_Product_Brand">
+      <End Role="Product_Brand" EntitySet="Product_Brand" />
+      <End Role="Purchase" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sells_Details_Sells" Association="Self.FK_Sells_Details_Sells">
+      <End Role="Sells" EntitySet="Sells" />
+      <End Role="Sells_Details" EntitySet="Sells_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

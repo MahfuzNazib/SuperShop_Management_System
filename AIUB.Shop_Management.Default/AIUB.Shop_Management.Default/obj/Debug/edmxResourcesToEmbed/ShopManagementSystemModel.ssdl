@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SuperShopManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JoiningDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Point" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EmpContact" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Salary" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JoiningDate" Type="date" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SuperShopManagementSystem.dbo.Product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="SellsPrice" />
+      <PropertyRef Name="Unit" />
+    </Key>
+    <Property Name="ProductId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SellsPrice" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_Brand">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="Product_Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductId" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SuperShopManagementSystem.dbo.Purchase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="PurchaseDate" />
+      <PropertyRef Name="UnitPrice" />
+      <PropertyRef Name="PurchaseQuentity" />
+    </Key>
+    <Property Name="ProductId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PurchaseDate" Type="date" Nullable="false" />
+    <Property Name="UnitPrice" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PurchaseQuentity" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sells">
+    <Key>
+      <PropertyRef Name="SellsId" />
+    </Key>
+    <Property Name="SellsId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CustomerId" Type="nvarchar" MaxLength="100" />
+    <Property Name="SellsDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalPrice" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SuperShopManagementSystem.dbo.Sells_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Sells_Details">
+    <Key>
+      <PropertyRef Name="SellsDetailsId" />
+      <PropertyRef Name="SellsId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="SellsQuentity" />
+      <PropertyRef Name="SellsPrice" />
+      <PropertyRef Name="Amount" />
+    </Key>
+    <Property Name="SellsDetailsId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SellsId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SellsQuentity" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SellsPrice" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Product_Product_Brand">
+    <End Role="Product_Brand" Type="Self.Product_Brand" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Brand">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Product_Brand">
+    <End Role="Product_Brand" Type="Self.Product_Brand" Multiplicity="1" />
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Brand">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sells_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Sells" Type="Self.Sells" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Sells">
+        <PropertyRef Name="SellsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sells_Details_Sells">
+    <End Role="Sells" Type="Self.Sells" Multiplicity="1" />
+    <End Role="Sells_Details" Type="Self.Sells_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sells">
+        <PropertyRef Name="SellsId" />
+      </Principal>
+      <Dependent Role="Sells_Details">
+        <PropertyRef Name="SellsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SuperShopManagementSystemModelStoreContainer">
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Brand" EntityType="Self.Product_Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sells" EntityType="Self.Sells" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Product].[ProductId] AS [ProductId], 
+    [Product].[SellsPrice] AS [SellsPrice], 
+    [Product].[Unit] AS [Unit]
+    FROM [dbo].[Product] AS [Product]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Purchase" EntityType="Self.Purchase" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Purchase].[ProductId] AS [ProductId], 
+    [Purchase].[PurchaseDate] AS [PurchaseDate], 
+    [Purchase].[UnitPrice] AS [UnitPrice], 
+    [Purchase].[PurchaseQuentity] AS [PurchaseQuentity]
+    FROM [dbo].[Purchase] AS [Purchase]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Sells_Details" EntityType="Self.Sells_Details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Sells_Details].[SellsDetailsId] AS [SellsDetailsId], 
+    [Sells_Details].[SellsId] AS [SellsId], 
+    [Sells_Details].[ProductId] AS [ProductId], 
+    [Sells_Details].[SellsQuentity] AS [SellsQuentity], 
+    [Sells_Details].[SellsPrice] AS [SellsPrice], 
+    [Sells_Details].[Amount] AS [Amount]
+    FROM [dbo].[Sells_Details] AS [Sells_Details]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Product_Product_Brand" Association="Self.FK_Product_Product_Brand">
+      <End Role="Product_Brand" EntitySet="Product_Brand" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Product_Brand" Association="Self.FK_Purchase_Product_Brand">
+      <End Role="Product_Brand" EntitySet="Product_Brand" />
+      <End Role="Purchase" EntitySet="Purchase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sells_Customer" Association="Self.FK_Sells_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Sells" EntitySet="Sells" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sells_Details_Sells" Association="Self.FK_Sells_Details_Sells">
+      <End Role="Sells" EntitySet="Sells" />
+      <End Role="Sells_Details" EntitySet="Sells_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

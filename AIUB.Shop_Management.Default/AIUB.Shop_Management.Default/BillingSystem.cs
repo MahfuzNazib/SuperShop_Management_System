@@ -293,7 +293,7 @@ namespace AIUB.Shop_Management.Default
             {
                 MessageBox.Show("Invalid Transaction", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Invoice(); //Call Invoice Method
+            //Invoice
             try
             {
                 ////additem into database from ItemTable(dataGrideView)
@@ -326,6 +326,7 @@ namespace AIUB.Shop_Management.Default
             txtCustomerId.Text = txtConvertedPoint.Text = txtTotalPoint.Text = "";
             txtTotal.Text = "0.00".ToString();
             drpPaymentType.ResetText();
+            Invoice(); //Call Invoice Method
             
         }
 

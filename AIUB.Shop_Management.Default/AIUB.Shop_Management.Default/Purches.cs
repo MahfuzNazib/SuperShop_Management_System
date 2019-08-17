@@ -37,8 +37,6 @@ namespace AIUB.Shop_Management.Default
             btnAdd.Visible = true;
             btnUpdate.Visible = true;
             btnDelete.Visible = true;
-
-   
         }
 
         private void LoadDetails()
@@ -218,8 +216,15 @@ namespace AIUB.Shop_Management.Default
                     MessageBox.Show(ex.Message);
                 }
             }
+            btnControl();
         }
-
+        public void btnControl()
+        {
+            btnAdd.Visible = true;
+            btnSave.Visible = false;
+            btnUpdate.Visible = true;
+            btnDelete.Visible = true;
+        }
         private void btnLSearch_Click(object sender, EventArgs e)
         {
             Search();
@@ -367,6 +372,16 @@ namespace AIUB.Shop_Management.Default
             {
                 dtpPurchaseDate.Focus();
             }
+        }
+
+        private void txtSearch_OnTextChange(object sender, EventArgs e)
+        {
+            btnControl();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
 
 

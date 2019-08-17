@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purches));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtInvestment = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtType = new System.Windows.Forms.TextBox();
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.dtpPurchaseDate = new System.Windows.Forms.DateTimePicker();
@@ -72,8 +74,6 @@
             this.dtpLDFrom = new Bunifu.Framework.UI.BunifuDatepicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtInvestment = new System.Windows.Forms.TextBox();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -114,6 +114,25 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(353, 612);
             this.panel3.TabIndex = 2;
+            // 
+            // txtInvestment
+            // 
+            this.txtInvestment.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtInvestment.Location = new System.Drawing.Point(147, 388);
+            this.txtInvestment.Name = "txtInvestment";
+            this.txtInvestment.ReadOnly = true;
+            this.txtInvestment.Size = new System.Drawing.Size(201, 29);
+            this.txtInvestment.TabIndex = 59;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(36, 391);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(89, 21);
+            this.bunifuCustomLabel8.TabIndex = 58;
+            this.bunifuCustomLabel8.Text = "TotalCost :";
             // 
             // txtType
             // 
@@ -528,21 +547,21 @@
             // 
             this.dgvPurchase.AllowUserToAddRows = false;
             this.dgvPurchase.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvPurchase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvPurchase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPurchase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPurchase.BackgroundColor = System.Drawing.Color.White;
             this.dgvPurchase.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPurchase.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dgvPurchase.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPurchase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPurchase.DoubleBuffered = true;
@@ -554,17 +573,17 @@
             this.dgvPurchase.Name = "dgvPurchase";
             this.dgvPurchase.ReadOnly = true;
             this.dgvPurchase.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPurchase.RowHeadersDefaultCellStyle = dataGridViewCellStyle55;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPurchase.RowsDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchase.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPurchase.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPurchase.Size = new System.Drawing.Size(819, 487);
             this.dgvPurchase.TabIndex = 62;
@@ -612,6 +631,7 @@
             this.txtSearch.Size = new System.Drawing.Size(250, 37);
             this.txtSearch.TabIndex = 61;
             this.txtSearch.text = "";
+            this.txtSearch.OnTextChange += new System.EventHandler(this.txtSearch_OnTextChange);
             // 
             // bunifuCustomLabel13
             // 
@@ -725,6 +745,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 661);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label2
             // 
@@ -736,25 +757,6 @@
             this.label2.Size = new System.Drawing.Size(158, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Purchase Page";
-            // 
-            // txtInvestment
-            // 
-            this.txtInvestment.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtInvestment.Location = new System.Drawing.Point(147, 388);
-            this.txtInvestment.Name = "txtInvestment";
-            this.txtInvestment.ReadOnly = true;
-            this.txtInvestment.Size = new System.Drawing.Size(201, 29);
-            this.txtInvestment.TabIndex = 59;
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(36, 391);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(89, 21);
-            this.bunifuCustomLabel8.TabIndex = 58;
-            this.bunifuCustomLabel8.Text = "TotalCost :";
             // 
             // Purches
             // 

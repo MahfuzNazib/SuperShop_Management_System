@@ -128,5 +128,18 @@ namespace AIUB.Shop_Management.Default
         {
             ShowProductInfoPanel();
         }
+
+        private void pRODUCTLISTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProductList pl = new ProductList();
+            pl.TopLevel = false;
+            pl.AutoScroll = true;
+            pl.FormBorderStyle = FormBorderStyle.None;
+            pl.Dock = DockStyle.Fill;
+
+            this.panelDisplay.Controls.Clear();
+            this.panelDisplay.Controls.Add(pl);
+            pl.Show();
+        }
     }
 }

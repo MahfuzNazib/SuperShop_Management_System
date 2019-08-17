@@ -1,27 +1,3 @@
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\AIUB.Shop_Management.Default.exe.config
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\AIUB.Shop_Management.Default.exe
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\AIUB.Shop_Management.Default.pdb
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Admin.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.AllReport.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.CustomerInfo.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.CustomReport.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.DailyReport.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.EmployeeInfo.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Login.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.ProductInfo.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Properties.Resources.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.ReportingHome.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.csproj.GenerateResource.Cache
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.exe
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.pdb
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\Bunifu_UI_v1.5.3.dll
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.EmployeeHome.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.AddCustomer.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Settings.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.BillingSystem.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Inventory.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Purches.resources
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Emp_CustomerInfo.resources
 D:\Projects\C# Final project\AIUB.Shop_Management.Default-master\AIUB.Shop_Management.Default\bin\Debug\AIUB.Shop_Management.Default.exe.config
 D:\Projects\C# Final project\AIUB.Shop_Management.Default-master\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.exe
 D:\Projects\C# Final project\AIUB.Shop_Management.Default-master\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.pdb
@@ -71,9 +47,33 @@ E:\DotNetAppilcation_AIUB\Super_shop_management_sys-v.p--master\AIUB.Shop_Manage
 E:\DotNetAppilcation_AIUB\Super_shop_management_sys-v.p--master\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.ReportingHome.resources
 E:\DotNetAppilcation_AIUB\Super_shop_management_sys-v.p--master\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Settings.resources
 E:\DotNetAppilcation_AIUB\Super_shop_management_sys-v.p--master\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.csproj.GenerateResource.Cache
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\AIUB.Shop_Management.Default.exe.config
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\AIUB.Shop_Management.Default.exe
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\AIUB.Shop_Management.Default.pdb
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\Bunifu_UI_v1.5.3.dll
 F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\EntityFramework.dll
 F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\EntityFramework.SqlServer.dll
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\itextsharp.dll
 F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\EntityFramework.xml
 F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\EntityFramework.SqlServer.xml
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\bin\Debug\itextsharp.dll
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.csprojResolveAssemblyReference.cache
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.AddCustomer.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Admin.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.AllReport.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.BillingSystem.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.CustomerInfo.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.CustomReport.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.DailyReport.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.EmployeeHome.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.EmployeeInfo.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Emp_CustomerInfo.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Inventory.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Login.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.ProductInfo.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.ProductList.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Properties.Resources.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Purches.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.ReportingHome.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.Settings.resources
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.csproj.GenerateResource.Cache
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.exe
+F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.pdb

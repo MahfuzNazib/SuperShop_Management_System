@@ -49,15 +49,15 @@ namespace AIUB.Shop_Management.Default
 
         private void ShowProductInfoPanel()
         {
-            this.panelDisplay.Controls.Clear();//Clear panelDisplay
-            this.panelDisplay.Controls.Add(this.tableLayoutPanel2);
-            this.panelDisplay.Controls.Add(this.btnCrtSellsLoad);
-            this.panelDisplay.Controls.Add(this.dataGridView1);
-            this.panelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDisplay.Location = new System.Drawing.Point(3, 34);
-            this.panelDisplay.Name = "panelDisplay";
-            this.panelDisplay.Size = new System.Drawing.Size(1178, 624);
-            this.panelDisplay.TabIndex = 4;
+            //this.panelDisplay.Controls.Clear();//Clear panelDisplay
+            //this.panelDisplay.Controls.Add(this.tableLayoutPanel2);
+            //this.panelDisplay.Controls.Add(this.btnCrtSellsLoad);
+            //this.panelDisplay.Controls.Add(this.dataGridView1);
+            //this.panelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            //this.panelDisplay.Location = new System.Drawing.Point(3, 34);
+            //this.panelDisplay.Name = "panelDisplay";
+            //this.panelDisplay.Size = new System.Drawing.Size(1178, 624);
+            //this.panelDisplay.TabIndex = 4;
         }
 
         private void puerchesToolStripMenuItem_Click(object sender, EventArgs e)

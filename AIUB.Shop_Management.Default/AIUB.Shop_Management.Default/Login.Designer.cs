@@ -36,16 +36,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lblError = new System.Windows.Forms.Label();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.swt = new Bunifu.Framework.UI.BunifuSwitch();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,10 +73,10 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtUsername, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtPassword, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.bunifuThinButton22, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.lblError, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.bunifuImageButton1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(380, 54);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
@@ -101,7 +104,7 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.bunifuImageButton2, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -152,19 +155,6 @@
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(62, 344);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(300, 33);
-            this.txtPassword.TabIndex = 6;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // bunifuThinButton22
             // 
@@ -225,6 +215,50 @@
             this.bunifuImageButton1.MouseLeave += new System.EventHandler(this.bunifuImageButton1_MouseLeave);
             this.bunifuImageButton1.MouseHover += new System.EventHandler(this.bunifuImageButton1_MouseHover);
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.08134F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.91866F));
+            this.tableLayoutPanel4.Controls.Add(this.txtPassword, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.swt, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 331);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(418, 60);
+            this.tableLayoutPanel4.TabIndex = 13;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(60, 13);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(300, 33);
+            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // swt
+            // 
+            this.swt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.swt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.swt.BorderRadius = 0;
+            this.swt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.swt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.swt.Location = new System.Drawing.Point(366, 20);
+            this.swt.Name = "swt";
+            this.swt.Oncolor = System.Drawing.Color.SeaGreen;
+            this.swt.Onoffcolor = System.Drawing.Color.DarkGray;
+            this.swt.Size = new System.Drawing.Size(51, 19);
+            this.swt.TabIndex = 8;
+            this.swt.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.swt.Value = true;
+            this.swt.Click += new System.EventHandler(this.bunifuSwitch1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +271,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogIn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -245,6 +280,8 @@
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,13 +292,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TextBox txtPassword;
+        private Bunifu.Framework.UI.BunifuSwitch swt;
     }
 }
 

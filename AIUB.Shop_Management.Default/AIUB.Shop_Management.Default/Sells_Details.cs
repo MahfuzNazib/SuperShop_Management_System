@@ -14,12 +14,12 @@ namespace AIUB.Shop_Management.Default
     
     public partial class Sells_Details
     {
-        public string SellsDetailsId { get; set; }
-        public string SellsId { get; set; }
+        public int Sellsid { get; set; }
         public string ProductId { get; set; }
-        public string SellsQuentity { get; set; }
-        public string SellsPrice { get; set; }
-        public string Amount { get; set; }
+        public string ProductName { get; set; }
+        public double Qnty { get; set; }
+        public string Unit { get; set; }
+        public decimal Total { get; set; }
     
         public virtual Sell Sell { get; set; }
     }

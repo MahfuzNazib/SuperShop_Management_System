@@ -19,7 +19,7 @@ namespace AIUB.Shop_Management.Default
             this.Sells_Details = new HashSet<Sells_Details>();
         }
     
-        public string SellsId { get; set; }
+        public int SellsId { get; set; }
         public string CustomerId { get; set; }
         public string SellsDate { get; set; }
         public string TotalPrice { get; set; }

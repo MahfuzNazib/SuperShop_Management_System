@@ -14,10 +14,14 @@ namespace AIUB.Shop_Management.Default
     
     public partial class Product
     {
+        public string Product_Type { get; set; }
+        public string Brand { get; set; }
+        public string Name { get; set; }
         public string ProductId { get; set; }
-        public string SellsPrice { get; set; }
+        public string PurchaseDate { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal SellsPrice { get; set; }
+        public double PurchaseQuentity { get; set; }
         public string Unit { get; set; }
-    
-        public virtual Product_Brand Product_Brand { get; set; }
     }
 }

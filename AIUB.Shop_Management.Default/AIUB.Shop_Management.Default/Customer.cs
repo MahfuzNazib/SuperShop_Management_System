@@ -14,7 +14,7 @@ namespace AIUB.Shop_Management.Default
     
     public partial class Customer
     {
-        public string CustomerId { get; set; }
+        public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string Contact { get; set; }
         public string JoiningDate { get; set; }

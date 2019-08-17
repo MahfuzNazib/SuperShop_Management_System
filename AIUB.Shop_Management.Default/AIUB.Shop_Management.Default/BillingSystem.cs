@@ -25,6 +25,30 @@ namespace AIUB.Shop_Management.Default
         double totalCost = 0;
         double amount;
 
+        private void Invoice()
+        {
+            SqlConnection con = new SqlConnection("Data Source=NAZIBMAHFUZ;Initial Catalog=SuperShopManagementSystem;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select max(Invoice)+1 from Sells", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    txtInvoice.Text = dr[0].ToString();
+                    if (txtInvoice.Text == "")
+                    {
+                        txtInvoice.Text = "100";
+                    }
+                }
+            }
+            else
+            {
+                txtInvoice.Text = "1001";
+            }
+            con.Close();
+        }
 
         private void txtProductId_TextChanged(object sender, EventArgs e)
         {
@@ -34,7 +58,7 @@ namespace AIUB.Shop_Management.Default
             {
                 SqlConnection con = new SqlConnection("Data Source=NAZIBMAHFUZ;Initial Catalog=SuperShopManagementSystem;Integrated Security=True");
                 con.Open();
-                string query = "select Name,SellsPrice,Unit from Product_Brand,Product where Product_Brand.ProductId='" + txtProductId.Text + "' and Product.ProductId='" + txtProductId.Text + "'";
+                string query = "select Name,SellsPrice,Unit from Product where ProductId='" + txtProductId.Text + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -64,24 +88,26 @@ namespace AIUB.Shop_Management.Default
 
         private void txtQuentity_TextChanged(object sender, EventArgs e)
         {
-
-            try
+            if (txtQuentity.Text != "")
             {
-                double qnty = Convert.ToDouble(txtQuentity.Text);
+                try
+                {
+                    double qnty = Convert.ToDouble(txtQuentity.Text);
 
-                double price = Convert.ToDouble(txtUnitPrice.Text);
+                    double price = Convert.ToDouble(txtUnitPrice.Text);
 
-                //Calculate Amount in a Product
-                amount = qnty * price;
-                txtAmount.Text = Convert.ToString(amount);
+                    //Calculate Amount in a Product
+                    amount = qnty * price;
+                    txtAmount.Text = Convert.ToString(amount);
 
-                totalCost = double.Parse(txtTotal.Text);
-                totalCost = totalCost + amount;
+                    totalCost = double.Parse(txtTotal.Text);
+                    totalCost = totalCost + amount;
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
         }
@@ -114,13 +140,18 @@ namespace AIUB.Shop_Management.Default
             }
 
             //Add Item In Data Table
-            addData(txtProductId.Text, txtPName.Text, txtUnitPrice.Text, txtQuentity.Text, txtUnit.Text, txtAmount.Text);
+            addData(txtInvoice.Text, txtProductId.Text, txtPName.Text, txtUnitPrice.Text, txtQuentity.Text, txtUnit.Text, txtAmount.Text);
 
-            MessageBox.Show("Congratulations", "Item Added Done !", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            //string query = "insert into Sells_Details(Invoice,ProductId,Name,Unit,UnitPrice,Qnty,Amount) "
+            //    + "values(" + txtInvoice.Text + ",'" + txtProductId.Text + "','" + txtPName.Text + "','" + txtUnit.Text + "'," + txtUnitPrice.Text + "," + txtQuentity.Text + "," + txtAmount.Text + ")";
+            //DBConnection.ExecuteQuery(query);
+            //MessageBox.Show("Item Added", "Cong !", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
 
             //Clear All TextBox regarding Product Info
-            txtTotal.Text = totalCost.ToString();
+            if(txtTotal.Text!="")
+                txtTotal.Text = totalCost.ToString();
+            
 
             txtProductId.Text = "";
             txtPName.Text = "";
@@ -128,14 +159,15 @@ namespace AIUB.Shop_Management.Default
             txtUnitPrice.Text = "";
             txtQuentity.Text = "";
             txtAmount.Text = "";
+            txtProductId.Focus();
 
 
 
         }
 
-        private void addData(string id, string name, string unitprice, string quentity, string unit, string amount)
+        private void addData(string inv, string id, string name, string unitprice, string quentity, string unit, string amount)
         {
-            String[] row = { id, name, unitprice, quentity, unit, amount };
+            String[] row = { inv,id, name, unitprice, quentity, unit, amount };
             ItemTable.Rows.Add(row);
 
 
@@ -148,20 +180,30 @@ namespace AIUB.Shop_Management.Default
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
+            if(txtDiscount.Text != "")
+            {
+                
+             try 
+	            {	        
+		            double discount = double.Parse(txtDiscount.Text);
+                    discount = ((100 - discount) / 100 * totalCost);
+                    txtNetAmount.Text = discount.ToString();
 
+                    //Savings Amount
+                    double t = double.Parse(txtTotal.Text);
+                    double na = double.Parse(txtNetAmount.Text);
+                    double savings = t - na;
+                    txtSavings.Text = savings.ToString();
+	            }
+	            catch (Exception ex)
+	            {
+		
+		            MessageBox.Show(ex.Message);
+	            }
+            }
             //Discount 
-            double discount = double.Parse(txtDiscount.Text);
-            discount = ((100 - discount) / 100 * totalCost);
-            txtNetAmount.Text = discount.ToString();
-
-            //Savings Amount
-            double t = double.Parse(txtTotal.Text);
-            double na = double.Parse(txtNetAmount.Text);
-            double savings = t - na;
-            txtSavings.Text = savings.ToString();
-
-
-        }
+            
+            }
 
         private void txtSavings_TextChanged(object sender, EventArgs e)
         {
@@ -170,27 +212,32 @@ namespace AIUB.Shop_Management.Default
 
         private void txtGivenAmount_TextChanged(object sender, EventArgs e)
         {
-            double given = double.Parse(txtGivenAmount.Text);
-            double na = double.Parse(txtNetAmount.Text);
-            double returnamount = given - na;
-            txtReturn.Text = returnamount.ToString();
-            txtGivenAmount.Text = given.ToString();
+            if(txtGivenAmount.Text !="")
+            {
+                try
+                {
+                    double given = double.Parse(txtGivenAmount.Text);
+                    double na = double.Parse(txtNetAmount.Text);
+                    double returnamount = given - na;
+                    txtReturn.Text = returnamount.ToString();
+                    txtGivenAmount.Text = given.ToString();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
         }
 
 
-        //Clear Function
-
-        private void Init()
-        {
-            Close();
-        }
-
+       
         //Cancel Transaction
         private void btnCancel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to Cancel the whole Transaction ?", "Confarmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Init();
+                
             }
         }
 
@@ -242,13 +289,198 @@ namespace AIUB.Shop_Management.Default
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("Printing is under Construction", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //{
-            //    Init();
-            //}
-            exportPdf(ItemTable, "Invoice");
+            if(txtNetAmount.Text=="")
+            {
+                MessageBox.Show("Invalid Transaction", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Invoice(); //Call Invoice Method
+            try
+            {
+                ////additem into database from ItemTable(dataGrideView)
+                for (int i = 0; i < ItemTable.Rows.Count ; i++)
+                {
+                    string queryItemAdd = "insert into Sells_Details(Invoice,ProductId,Name,UnitPrice,Qnty,Unit,Amount) "
+                        + "values('"+ItemTable.Rows[i].Cells[0].Value+"','"+ItemTable.Rows[i].Cells[1].Value+"','"+ItemTable.Rows[i].Cells[2].Value+"','"+ItemTable.Rows[i].Cells[3].Value+"','"+ItemTable.Rows[i].Cells[4].Value+"','"+ItemTable.Rows[i].Cells[5].Value+"','"+ItemTable.Rows[i].Cells[6].Value+"')";
+                    DBConnection.ExecuteQuery(queryItemAdd);
+                   
+                }
+                //Insert Data Into Sells Table
+                string query = "insert into Sells(CustomerId,SellsDate,TotalPrice,Discount,NetAmount) "
+                    + "values ('" + txtCustomerId.Text + "','" + dtpTranscDate.Text + "'," + txtTotal.Text + "," + txtDiscount.Text + "," + txtNetAmount.Text + ")";
+                DBConnection.ExecuteQuery(query);
+
+                //Update Customer Point If any Registered Customer 
+
+                string query1 = "Update Customer set Point='" + txtTotalPoint.Text + "' where CustomerId='" + txtCustomerId.Text + "'";
+                DBConnection.ExecuteQuery(query1);
+                exportPdf(ItemTable, "Invoice");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            ItemTable.Rows.Clear();
+            txtDiscount.Text = txtGivenAmount.Text = txtReturn.Text = txtSavings.Text = txtNetAmount.Text = "";
+            txtCustomerId.Text = txtConvertedPoint.Text = txtTotalPoint.Text = "";
+            txtTotal.Text = "0.00".ToString();
+            drpPaymentType.ResetText();
+            
         }
 
+        private void txtProductId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) //press enter to go to the password
+            {
+                txtQuentity.Focus();
+            }
+        }
+
+        private void txtQuentity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                btnAdd.PerformClick(); //Fire Add Button Click Event;
+            }
+        }
+
+        private void btnAdd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                txtProductId.Focus();
+            }
+        }
+
+        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Invoice();
+            
+        }
+
+        private void BillingSystem_Load(object sender, EventArgs e)
+        {
+            Invoice();
+            
+        }
+
+        private void txtNetAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            if(txtTotal.Text!="")
+            {
+                pointCalculation();
+            }
+            
+        }
+
+        private void pointCalculation()
+        {
+            double point;
+            double taka = Convert.ToDouble(txtTotal.Text);
+            point = ((1 * taka) / 1000);
+            double totalpoint = 0.0;
+            totalpoint = point + totalpoint; 
+
+            txtConvertedPoint.Text = point.ToString();
+            txtTotalPoint.Text = totalpoint.ToString();
+        }
+
+        private void txtConvertedPoint_TextChanged(object sender, EventArgs e)
+        {
+            //pointCalculation();
+        }
+
+        private void txtCustomerId_TextChanged(object sender, EventArgs e)
+        {
+            
+            if(txtCustomerId.Text!=null)
+            {
+                try
+                {
+                    string query = "select Point from Customer  where CustomerId='" + txtCustomerId.Text + "'";
+                    DataTable dt = DBConnection.GetDataTable(query);
+
+                    if(dt.Rows.Count ==1)
+                    {
+                        
+                        txtTotalPoint.Text = dt.Rows[0]["Point"].ToString();
+                        double tp = Convert.ToDouble(txtTotalPoint.Text);
+                        double p = Convert.ToDouble(txtConvertedPoint.Text);
+                        tp = tp + p;
+                        txtTotalPoint.Text = tp.ToString();
+                    }
+                    else
+                    {
+                        pointCalculation();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+
+            }
+            
+        }
+
+        private void ItemTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex>=0)
+            {
+                string id = ItemTable.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                try
+                {
+                    string query = "select * from Sells_Details where ProductId='"+id+"' and Invoice="+txtInvoice.Text+"";
+                    DataTable dt = DBConnection.GetDataTable(query);
+
+                    if(dt.Rows.Count==1)
+                    {
+                        txtProductId.Text = dt.Rows[0]["ProductId"].ToString();
+                        txtPName.Text = dt.Rows[0]["Name"].ToString();
+                        txtUnit.Text = dt.Rows[0]["Unit"].ToString();
+                        txtUnitPrice.Text = dt.Rows[0]["UnitPrice"].ToString();
+                        txtQuentity.Text = dt.Rows[0]["Qnty"].ToString();
+                        txtAmount.Text = dt.Rows[0]["Amount"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Product Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void txtDiscount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                txtGivenAmount.Focus();
+            }
+        }
+
+        private void txtGivenAmount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                drpPaymentType.Focus();
+            }
+        }
 
     }
 }

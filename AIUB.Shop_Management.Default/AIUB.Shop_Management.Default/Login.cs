@@ -18,41 +18,15 @@ namespace AIUB.Shop_Management.Default
             InitializeComponent();
         }
 
+        
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            /*if(txtUserName.Text=="Admin" && txtPassword.Text=="admin")
-            {
-                Admin a = new Admin();
-                a.Show();
-                this.Hide();
-            }
-
-            else if(txtUserName.Text=="Emp" && txtPassword.Text=="pass")
-            {
-                EmployeeHome eh = new EmployeeHome();
-                eh.Show();
-                this.Hide();
-            }*/
+           
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            //if (txtUsername.Text == "Admin" && txtPassword.Text == "admin")
-            //{
-            //    lblError.Visible = false;
-            //    Admin a = new Admin();
-            //    a.Show();
-            //    this.Hide();
-            //}
-            //else if (txtUsername.Text == "Emp" && txtPassword.Text == "pass")
-            //{
-            //    lblError.Visible = false;
-            //    EmployeeHome eh = new EmployeeHome();
-            //    eh.Show();
-            //    this.Hide();
-            //}
-            //else
-            //    lblError.Visible = true;
+            
             string query = "select * from Employee where EmpId='"+txtUsername.Text+"' and [Password]='"+txtPassword.Text+"'";
             DataTable dt = DBConnection.GetDataTable(query);
             if(dt.Rows.Count != 1)
@@ -117,6 +91,16 @@ namespace AIUB.Shop_Management.Default
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuSwitch1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

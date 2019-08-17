@@ -67,8 +67,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.984872F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.01513F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.228442F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.77156F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 661);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -84,7 +84,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1178, 60);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1178, 55);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -94,7 +94,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(73, 16);
+            this.label1.Location = new System.Drawing.Point(73, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 28);
             this.label1.TabIndex = 5;
@@ -108,7 +108,7 @@
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(3, 3);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(60, 54);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(60, 49);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
@@ -135,7 +135,7 @@
             this.tableLayoutPanel3.Controls.Add(this.txtConfirmPass, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.lblError, 1, 6);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(328, 69);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(328, 64);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.31061F));
@@ -304,7 +304,7 @@
             this.btnReset.ActiveForecolor = System.Drawing.Color.White;
             this.btnReset.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnReset.BackColor = System.Drawing.Color.White;
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
             this.btnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReset.BackgroundImage")));
             this.btnReset.ButtonText = "Reset";
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -330,7 +330,7 @@
             this.btnUpdate.ActiveForecolor = System.Drawing.Color.White;
             this.btnUpdate.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnUpdate.BackColor = System.Drawing.Color.White;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
             this.btnUpdate.ButtonText = "Update";
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;

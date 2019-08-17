@@ -65,7 +65,7 @@
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Quality = 10;
-            this.panelSideMenu.Size = new System.Drawing.Size(184, 661);
+            this.panelSideMenu.Size = new System.Drawing.Size(143, 661);
             this.panelSideMenu.TabIndex = 0;
             // 
             // bunifuFlatButton1
@@ -95,7 +95,7 @@
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Red;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(184, 48);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(140, 48);
             this.bunifuFlatButton1.TabIndex = 7;
             this.bunifuFlatButton1.Text = "Close ";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -130,7 +130,7 @@
             this.btnSettings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSettings.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSettings.selected = false;
-            this.btnSettings.Size = new System.Drawing.Size(184, 48);
+            this.btnSettings.Size = new System.Drawing.Size(140, 48);
             this.btnSettings.TabIndex = 6;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,7 +165,7 @@
             this.btnLogout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnLogout.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogout.selected = false;
-            this.btnLogout.Size = new System.Drawing.Size(184, 48);
+            this.btnLogout.Size = new System.Drawing.Size(140, 48);
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +200,7 @@
             this.btnEmployee.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnEmployee.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEmployee.selected = false;
-            this.btnEmployee.Size = new System.Drawing.Size(184, 48);
+            this.btnEmployee.Size = new System.Drawing.Size(140, 48);
             this.btnEmployee.TabIndex = 4;
             this.btnEmployee.Text = "Employee";
             this.btnEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -235,7 +235,7 @@
             this.btnCustomer.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnCustomer.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCustomer.selected = false;
-            this.btnCustomer.Size = new System.Drawing.Size(184, 48);
+            this.btnCustomer.Size = new System.Drawing.Size(140, 48);
             this.btnCustomer.TabIndex = 3;
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -270,7 +270,7 @@
             this.btnReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnReport.OnHoverTextColor = System.Drawing.Color.White;
             this.btnReport.selected = false;
-            this.btnReport.Size = new System.Drawing.Size(184, 48);
+            this.btnReport.Size = new System.Drawing.Size(143, 48);
             this.btnReport.TabIndex = 3;
             this.btnReport.Text = "Report";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,7 +305,7 @@
             this.btnProduct.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnProduct.OnHoverTextColor = System.Drawing.Color.White;
             this.btnProduct.selected = false;
-            this.btnProduct.Size = new System.Drawing.Size(184, 48);
+            this.btnProduct.Size = new System.Drawing.Size(143, 48);
             this.btnProduct.TabIndex = 3;
             this.btnProduct.Text = "Product";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,13 +317,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 103);
+            this.label1.Location = new System.Drawing.Point(42, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 25);
+            this.label1.Size = new System.Drawing.Size(98, 33);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Admin : ";
+            this.label1.Text = "Admin  ";
             // 
             // bunifuImageButton1
             // 
@@ -341,9 +341,9 @@
             // panelDisplay
             // 
             this.panelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDisplay.Location = new System.Drawing.Point(184, 0);
+            this.panelDisplay.Location = new System.Drawing.Point(143, 0);
             this.panelDisplay.Name = "panelDisplay";
-            this.panelDisplay.Size = new System.Drawing.Size(1000, 661);
+            this.panelDisplay.Size = new System.Drawing.Size(1041, 661);
             this.panelDisplay.TabIndex = 1;
             // 
             // Admin

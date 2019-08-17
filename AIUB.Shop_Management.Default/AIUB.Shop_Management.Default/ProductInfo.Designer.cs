@@ -28,30 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            //System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            //System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            //System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            //System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            //System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductInfo));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aDMINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tOOLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pURCHASEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDisplay = new System.Windows.Forms.Panel();
-            //this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            //this.crtSells = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCrtSellsLoad = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelDisplay.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.crtSells)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -71,6 +65,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aDMINToolStripMenuItem,
@@ -85,108 +80,102 @@
             // 
             // aDMINToolStripMenuItem
             // 
+            this.aDMINToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aDMINToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.aDMINToolStripMenuItem.Name = "aDMINToolStripMenuItem";
-            this.aDMINToolStripMenuItem.Size = new System.Drawing.Size(58, 27);
+            this.aDMINToolStripMenuItem.Size = new System.Drawing.Size(70, 27);
             this.aDMINToolStripMenuItem.Text = "ADMIN";
             this.aDMINToolStripMenuItem.Click += new System.EventHandler(this.aDMINToolStripMenuItem_Click_1);
             // 
             // tOOLSToolStripMenuItem
             // 
+            this.tOOLSToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tOOLSToolStripMenuItem.Name = "tOOLSToolStripMenuItem";
-            this.tOOLSToolStripMenuItem.Size = new System.Drawing.Size(82, 27);
+            this.tOOLSToolStripMenuItem.Size = new System.Drawing.Size(99, 27);
             this.tOOLSToolStripMenuItem.Text = "INVENTORY";
             this.tOOLSToolStripMenuItem.Click += new System.EventHandler(this.tOOLSToolStripMenuItem_Click);
             // 
             // pURCHASEToolStripMenuItem
             // 
+            this.pURCHASEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pURCHASEToolStripMenuItem.Name = "pURCHASEToolStripMenuItem";
-            this.pURCHASEToolStripMenuItem.Size = new System.Drawing.Size(78, 27);
+            this.pURCHASEToolStripMenuItem.Size = new System.Drawing.Size(94, 27);
             this.pURCHASEToolStripMenuItem.Text = "PURCHASE";
             this.pURCHASEToolStripMenuItem.Click += new System.EventHandler(this.pURCHASEToolStripMenuItem_Click);
             // 
             // panelDisplay
             // 
-            this.panelDisplay.Controls.Add(this.tableLayoutPanel2);
-            this.panelDisplay.Controls.Add(this.btnCrtSellsLoad);
-            this.panelDisplay.Controls.Add(this.dataGridView1);
+            this.panelDisplay.Controls.Add(this.label2);
+            this.panelDisplay.Controls.Add(this.label1);
+            this.panelDisplay.Controls.Add(this.chart1);
+            this.panelDisplay.Controls.Add(this.bunifuCircleProgressbar1);
             this.panelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDisplay.Location = new System.Drawing.Point(3, 34);
             this.panelDisplay.Name = "panelDisplay";
             this.panelDisplay.Size = new System.Drawing.Size(1178, 624);
             this.panelDisplay.TabIndex = 4;
             // 
+            // bunifuCircleProgressbar1
+            // 
+            this.bunifuCircleProgressbar1.animated = false;
+            this.bunifuCircleProgressbar1.animationIterval = 10;
+            this.bunifuCircleProgressbar1.animationSpeed = 300;
+            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.White;
+            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
+            this.bunifuCircleProgressbar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bunifuCircleProgressbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.LabelVisible = true;
+            this.bunifuCircleProgressbar1.LineProgressThickness = 10;
+            this.bunifuCircleProgressbar1.LineThickness = 8;
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(78, 55);
+            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.bunifuCircleProgressbar1.MaxValue = 100;
+            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(182, 182);
+            this.bunifuCircleProgressbar1.TabIndex = 2;
+            this.bunifuCircleProgressbar1.UseWaitCursor = true;
+            this.bunifuCircleProgressbar1.Value = 48;
+            // 
             // chart1
             // 
-            //this.chart1.BackColor = System.Drawing.Color.Transparent;
-            //chartArea3.Name = "ChartArea1";
-            //this.chart1.ChartAreas.Add(chartArea3);
-            //this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            //legend3.Name = "Legend1";
-            //this.chart1.Legends.Add(legend3);
-            //this.chart1.Location = new System.Drawing.Point(3, 3);
-            //this.chart1.Name = "chart1";
-            //series3.ChartArea = "ChartArea1";
-            //series3.Legend = "Legend1";
-            //series3.Name = "Series1";
-            //this.chart1.Series.Add(series3);
-            //this.chart1.Size = new System.Drawing.Size(583, 347);
-            //this.chart1.TabIndex = 0;
-            //this.chart1.Text = " ";
-            //// 
-            //// crtSells
-            //// 
-            //this.crtSells.BackColor = System.Drawing.Color.Transparent;
-            //chartArea4.Name = "ChartArea1";
-            //this.crtSells.ChartAreas.Add(chartArea4);
-            //this.crtSells.Dock = System.Windows.Forms.DockStyle.Fill;
-            //legend4.Name = "Legend1";
-            //this.crtSells.Legends.Add(legend4);
-            //this.crtSells.Location = new System.Drawing.Point(592, 3);
-            //this.crtSells.Name = "crtSells";
-            //series4.ChartArea = "ChartArea1";
-            //series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            //series4.Legend = "Legend1";
-            //series4.MarkerStep = 2;
-            //series4.Name = "Product1";
-            //series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            //this.crtSells.Series.Add(series4);
-            //this.crtSells.Size = new System.Drawing.Size(583, 347);
-            //this.crtSells.TabIndex = 1;
-            //this.crtSells.Text = "chart2";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(520, 55);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(381, 248);
+            this.chart1.TabIndex = 3;
+            this.chart1.Text = "chart1";
             // 
-            // dataGridView1
+            // label1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 354);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(176, 267);
-            this.dataGridView1.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Marker", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(94, 246);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Available Product(%)";
             // 
-            // btnCrtSellsLoad
+            // label2
             // 
-            this.btnCrtSellsLoad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrtSellsLoad.Location = new System.Drawing.Point(851, 359);
-            this.btnCrtSellsLoad.Name = "btnCrtSellsLoad";
-            this.btnCrtSellsLoad.Size = new System.Drawing.Size(88, 37);
-            this.btnCrtSellsLoad.TabIndex = 3;
-            this.btnCrtSellsLoad.Text = "LOAD";
-            this.btnCrtSellsLoad.UseVisualStyleBackColor = true;
-            this.btnCrtSellsLoad.Click += new System.EventHandler(this.btnCrtSellsLoad_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            //this.tableLayoutPanel2.Controls.Add(this.crtSells, 1, 0);
-            //this.tableLayoutPanel2.Controls.Add(this.chart1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1178, 353);
-            this.tableLayoutPanel2.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe Marker", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(627, 321);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 22);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Sells Chart";
             // 
             // ProductInfo
             // 
@@ -202,10 +191,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelDisplay.ResumeLayout(false);
-            //((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.crtSells)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panelDisplay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,11 +205,12 @@
         private System.Windows.Forms.ToolStripMenuItem tOOLSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pURCHASEToolStripMenuItem;
         private System.Windows.Forms.Panel panelDisplay;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
         //private System.Windows.Forms.DataVisualization.Charting.Chart crtSells;
         //private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnCrtSellsLoad;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 
         //private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 

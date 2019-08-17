@@ -29,19 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purches));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtSearch = new Bunifu.Framework.UI.BunifuTextbox();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.dtpPurchaseDate = new System.Windows.Forms.DateTimePicker();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtBDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtUnit = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtSPrice = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtBrand = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -53,12 +56,13 @@
             this.txtAmount = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtBPrice = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.txtType = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvPurchase = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtLSearch = new Bunifu.Framework.UI.BunifuTextbox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnLSearch = new System.Windows.Forms.Button();
             this.drpSearch = new Bunifu.Framework.UI.BunifuDropdown();
@@ -66,33 +70,34 @@
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dtpLDTo = new Bunifu.Framework.UI.BunifuDatepicker();
             this.dtpLDFrom = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.dgvPurches = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtInvestment = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPurches)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtSearch);
+            this.panel3.Controls.Add(this.txtInvestment);
+            this.panel3.Controls.Add(this.bunifuCustomLabel8);
+            this.panel3.Controls.Add(this.txtType);
+            this.panel3.Controls.Add(this.btnSave);
+            this.panel3.Controls.Add(this.dtpPurchaseDate);
             this.panel3.Controls.Add(this.bunifuCustomLabel10);
-            this.panel3.Controls.Add(this.txtBDate);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
             this.panel3.Controls.Add(this.bunifuCustomLabel1);
-            this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.txtUnit);
             this.panel3.Controls.Add(this.bunifuCustomLabel9);
             this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.btnUpdate);
-            this.panel3.Controls.Add(this.bunifuCustomLabel8);
             this.panel3.Controls.Add(this.txtSPrice);
             this.panel3.Controls.Add(this.bunifuCustomLabel7);
             this.panel3.Controls.Add(this.txtBrand);
@@ -104,54 +109,66 @@
             this.panel3.Controls.Add(this.txtAmount);
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
             this.panel3.Controls.Add(this.txtBPrice);
-            this.panel3.Controls.Add(this.txtType);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(666, 3);
+            this.panel3.Location = new System.Drawing.Point(828, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(515, 612);
+            this.panel3.Size = new System.Drawing.Size(353, 612);
             this.panel3.TabIndex = 2;
             // 
-            // txtSearch
+            // txtType
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.White;
-            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
-            this.txtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.txtSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtSearch.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearch.Icon")));
-            this.txtSearch.Location = new System.Drawing.Point(132, 14);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(240, 34);
-            this.txtSearch.TabIndex = 55;
-            this.txtSearch.text = "";
+            this.txtType.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtType.Location = new System.Drawing.Point(143, 24);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(201, 29);
+            this.txtType.TabIndex = 57;
+            this.txtType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtType_KeyDown);
+            // 
+            // btnSave
+            // 
+            this.btnSave.ActiveBorderThickness = 1;
+            this.btnSave.ActiveCornerRadius = 20;
+            this.btnSave.ActiveFillColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnSave.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSave.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.ButtonText = "SAVE";
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.IdleBorderThickness = 1;
+            this.btnSave.IdleCornerRadius = 20;
+            this.btnSave.IdleFillColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSave.IdleForecolor = System.Drawing.Color.White;
+            this.btnSave.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.Location = new System.Drawing.Point(107, 551);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(168, 50);
+            this.btnSave.TabIndex = 56;
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // dtpPurchaseDate
+            // 
+            this.dtpPurchaseDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpPurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPurchaseDate.Location = new System.Drawing.Point(145, 440);
+            this.dtpPurchaseDate.Name = "dtpPurchaseDate";
+            this.dtpPurchaseDate.Size = new System.Drawing.Size(199, 29);
+            this.dtpPurchaseDate.TabIndex = 55;
             // 
             // bunifuCustomLabel10
             // 
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(44, 497);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(9, 443);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(112, 21);
             this.bunifuCustomLabel10.TabIndex = 54;
             this.bunifuCustomLabel10.Text = "Buying Date :";
-            // 
-            // txtBDate
-            // 
-            this.txtBDate.BackColor = System.Drawing.Color.White;
-            this.txtBDate.BorderColorFocused = System.Drawing.Color.DarkGreen;
-            this.txtBDate.BorderColorIdle = System.Drawing.Color.LightSlateGray;
-            this.txtBDate.BorderColorMouseHover = System.Drawing.SystemColors.ActiveCaption;
-            this.txtBDate.BorderThickness = 1;
-            this.txtBDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBDate.Enabled = false;
-            this.txtBDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBDate.ForeColor = System.Drawing.Color.Black;
-            this.txtBDate.isPassword = false;
-            this.txtBDate.Location = new System.Drawing.Point(178, 494);
-            this.txtBDate.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.txtBDate.Name = "txtBDate";
-            this.txtBDate.Size = new System.Drawing.Size(284, 31);
-            this.txtBDate.TabIndex = 53;
-            this.txtBDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnAdd
             // 
@@ -171,18 +188,19 @@
             this.btnAdd.IdleFillColor = System.Drawing.Color.White;
             this.btnAdd.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnAdd.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnAdd.Location = new System.Drawing.Point(99, 539);
+            this.btnAdd.Location = new System.Drawing.Point(13, 494);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(105, 56);
+            this.btnAdd.Size = new System.Drawing.Size(108, 56);
             this.btnAdd.TabIndex = 52;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(43, 389);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(8, 257);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(113, 21);
             this.bunifuCustomLabel2.TabIndex = 30;
@@ -192,26 +210,11 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(57, 227);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(22, 163);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(99, 21);
             this.bunifuCustomLabel1.TabIndex = 28;
             this.bunifuCustomLabel1.Text = "Product ID :";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSearch.Location = new System.Drawing.Point(375, 14);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(87, 34);
-            this.btnSearch.TabIndex = 51;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // txtUnit
             // 
@@ -224,18 +227,19 @@
             this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit.ForeColor = System.Drawing.Color.Black;
             this.txtUnit.isPassword = false;
-            this.txtUnit.Location = new System.Drawing.Point(178, 438);
-            this.txtUnit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtUnit.Location = new System.Drawing.Point(145, 344);
+            this.txtUnit.Margin = new System.Windows.Forms.Padding(5);
             this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(284, 31);
+            this.txtUnit.Size = new System.Drawing.Size(201, 31);
             this.txtUnit.TabIndex = 50;
             this.txtUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUnit_KeyDown);
             // 
             // bunifuCustomLabel9
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(105, 443);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(72, 349);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(51, 21);
             this.bunifuCustomLabel9.TabIndex = 49;
@@ -259,12 +263,13 @@
             this.btnDelete.IdleFillColor = System.Drawing.Color.White;
             this.btnDelete.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnDelete.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnDelete.Location = new System.Drawing.Point(357, 539);
+            this.btnDelete.Location = new System.Drawing.Point(244, 494);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(105, 56);
+            this.btnDelete.Size = new System.Drawing.Size(98, 56);
             this.btnDelete.TabIndex = 46;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -284,22 +289,13 @@
             this.btnUpdate.IdleFillColor = System.Drawing.Color.White;
             this.btnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnUpdate.Location = new System.Drawing.Point(228, 539);
+            this.btnUpdate.Location = new System.Drawing.Point(131, 494);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(105, 56);
+            this.btnUpdate.Size = new System.Drawing.Size(103, 56);
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(13, 13);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(113, 21);
-            this.bunifuCustomLabel8.TabIndex = 42;
-            this.bunifuCustomLabel8.Text = "Search by ID :";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtSPrice
             // 
@@ -312,18 +308,19 @@
             this.txtSPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSPrice.ForeColor = System.Drawing.Color.Black;
             this.txtSPrice.isPassword = false;
-            this.txtSPrice.Location = new System.Drawing.Point(178, 385);
-            this.txtSPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtSPrice.Location = new System.Drawing.Point(143, 253);
+            this.txtSPrice.Margin = new System.Windows.Forms.Padding(5);
             this.txtSPrice.Name = "txtSPrice";
-            this.txtSPrice.Size = new System.Drawing.Size(284, 31);
+            this.txtSPrice.Size = new System.Drawing.Size(201, 31);
             this.txtSPrice.TabIndex = 41;
             this.txtSPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSPrice_KeyDown);
             // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(42, 335);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(7, 210);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(114, 21);
             this.bunifuCustomLabel7.TabIndex = 40;
@@ -340,18 +337,20 @@
             this.txtBrand.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBrand.ForeColor = System.Drawing.Color.Black;
             this.txtBrand.isPassword = false;
-            this.txtBrand.Location = new System.Drawing.Point(178, 113);
-            this.txtBrand.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtBrand.Location = new System.Drawing.Point(143, 66);
+            this.txtBrand.Margin = new System.Windows.Forms.Padding(5);
             this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(284, 35);
+            this.txtBrand.Size = new System.Drawing.Size(201, 35);
             this.txtBrand.TabIndex = 39;
             this.txtBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBrand.OnValueChanged += new System.EventHandler(this.txtBrand_OnValueChanged);
+            this.txtBrand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBrand_KeyDown);
             // 
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(102, 65);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(67, 27);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(54, 21);
             this.bunifuCustomLabel6.TabIndex = 38;
@@ -368,18 +367,20 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.isPassword = false;
-            this.txtName.Location = new System.Drawing.Point(178, 169);
-            this.txtName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtName.Location = new System.Drawing.Point(143, 114);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(284, 35);
+            this.txtName.Size = new System.Drawing.Size(201, 35);
             this.txtName.TabIndex = 37;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
+            this.txtName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtName_MouseDown);
             // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(93, 119);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(58, 72);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(63, 21);
             this.bunifuCustomLabel5.TabIndex = 36;
@@ -396,18 +397,19 @@
             this.txtProductId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductId.ForeColor = System.Drawing.Color.Black;
             this.txtProductId.isPassword = false;
-            this.txtProductId.Location = new System.Drawing.Point(178, 225);
-            this.txtProductId.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtProductId.Location = new System.Drawing.Point(143, 161);
+            this.txtProductId.Margin = new System.Windows.Forms.Padding(5);
             this.txtProductId.Name = "txtProductId";
-            this.txtProductId.Size = new System.Drawing.Size(284, 35);
+            this.txtProductId.Size = new System.Drawing.Size(201, 35);
             this.txtProductId.TabIndex = 35;
             this.txtProductId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtProductId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductId_KeyDown);
             // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(92, 173);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(57, 118);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(64, 21);
             this.bunifuCustomLabel4.TabIndex = 34;
@@ -424,22 +426,24 @@
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.ForeColor = System.Drawing.Color.Black;
             this.txtAmount.isPassword = false;
-            this.txtAmount.Location = new System.Drawing.Point(178, 281);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtAmount.Location = new System.Drawing.Point(145, 296);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(5);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(284, 31);
+            this.txtAmount.Size = new System.Drawing.Size(201, 31);
             this.txtAmount.TabIndex = 33;
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAmount.OnValueChanged += new System.EventHandler(this.txtAmount_OnValueChanged);
+            this.txtAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAmount_KeyDown);
             // 
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(76, 281);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(36, 296);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(80, 21);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(85, 21);
             this.bunifuCustomLabel3.TabIndex = 32;
-            this.bunifuCustomLabel3.Text = "Amount :";
+            this.bunifuCustomLabel3.Text = "Quantity :";
             // 
             // txtBPrice
             // 
@@ -452,36 +456,19 @@
             this.txtBPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBPrice.ForeColor = System.Drawing.Color.Black;
             this.txtBPrice.isPassword = false;
-            this.txtBPrice.Location = new System.Drawing.Point(178, 333);
-            this.txtBPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtBPrice.Location = new System.Drawing.Point(143, 208);
+            this.txtBPrice.Margin = new System.Windows.Forms.Padding(5);
             this.txtBPrice.Name = "txtBPrice";
-            this.txtBPrice.Size = new System.Drawing.Size(284, 31);
+            this.txtBPrice.Size = new System.Drawing.Size(201, 31);
             this.txtBPrice.TabIndex = 31;
             this.txtBPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtType
-            // 
-            this.txtType.BackColor = System.Drawing.Color.White;
-            this.txtType.BorderColorFocused = System.Drawing.Color.DarkGreen;
-            this.txtType.BorderColorIdle = System.Drawing.Color.SeaGreen;
-            this.txtType.BorderColorMouseHover = System.Drawing.SystemColors.ActiveCaption;
-            this.txtType.BorderThickness = 1;
-            this.txtType.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.ForeColor = System.Drawing.Color.Black;
-            this.txtType.isPassword = false;
-            this.txtType.Location = new System.Drawing.Point(178, 57);
-            this.txtType.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(284, 35);
-            this.txtType.TabIndex = 29;
-            this.txtType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBPrice_KeyDown);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.18581F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 521F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 359F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel3, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -490,13 +477,13 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.94508F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1184, 618);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
@@ -511,22 +498,22 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.94508F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(663, 618);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 618F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(825, 618);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.dgvPurchase, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.dgvPurches, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
@@ -534,13 +521,59 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(663, 618);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(825, 618);
             this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // dgvPurchase
+            // 
+            this.dgvPurchase.AllowUserToAddRows = false;
+            this.dgvPurchase.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvPurchase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle53;
+            this.dgvPurchase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPurchase.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPurchase.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPurchase.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvPurchase.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle54.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle54;
+            this.dgvPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPurchase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPurchase.DoubleBuffered = true;
+            this.dgvPurchase.EnableHeadersVisualStyles = false;
+            this.dgvPurchase.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvPurchase.HeaderBgColor = System.Drawing.Color.DarkSlateGray;
+            this.dgvPurchase.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvPurchase.Location = new System.Drawing.Point(3, 128);
+            this.dgvPurchase.Name = "dgvPurchase";
+            this.dgvPurchase.ReadOnly = true;
+            this.dgvPurchase.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchase.RowHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPurchase.RowsDefaultCellStyle = dataGridViewCellStyle56;
+            this.dgvPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPurchase.Size = new System.Drawing.Size(819, 487);
+            this.dgvPurchase.TabIndex = 62;
+            this.dgvPurchase.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchase_CellClick);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txtLSearch);
+            this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.bunifuCustomLabel13);
             this.panel2.Controls.Add(this.btnLSearch);
             this.panel2.Controls.Add(this.drpSearch);
@@ -552,21 +585,33 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(663, 125);
+            this.panel2.Size = new System.Drawing.Size(825, 125);
             this.panel2.TabIndex = 1;
             // 
-            // txtLSearch
+            // label1
             // 
-            this.txtLSearch.BackColor = System.Drawing.Color.White;
-            this.txtLSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtLSearch.BackgroundImage")));
-            this.txtLSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.txtLSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtLSearch.Icon = ((System.Drawing.Image)(resources.GetObject("txtLSearch.Icon")));
-            this.txtLSearch.Location = new System.Drawing.Point(273, 14);
-            this.txtLSearch.Name = "txtLSearch";
-            this.txtLSearch.Size = new System.Drawing.Size(250, 37);
-            this.txtLSearch.TabIndex = 61;
-            this.txtLSearch.text = "";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sitka Small", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(445, -41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 28);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Customer Information";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
+            this.txtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtSearch.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtSearch.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearch.Icon")));
+            this.txtSearch.Location = new System.Drawing.Point(273, 14);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(250, 37);
+            this.txtSearch.TabIndex = 61;
+            this.txtSearch.text = "";
             // 
             // bunifuCustomLabel13
             // 
@@ -592,6 +637,7 @@
             this.btnLSearch.TabIndex = 55;
             this.btnLSearch.Text = "Search";
             this.btnLSearch.UseVisualStyleBackColor = false;
+            this.btnLSearch.Click += new System.EventHandler(this.btnLSearch_Click);
             // 
             // drpSearch
             // 
@@ -602,6 +648,7 @@
             this.drpSearch.ForeColor = System.Drawing.Color.White;
             this.drpSearch.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.drpSearch.Items = new string[] {
+        "ID",
         "Type",
         "Brand",
         "Name"};
@@ -662,15 +709,6 @@
             this.dtpLDFrom.TabIndex = 57;
             this.dtpLDFrom.Value = new System.DateTime(2019, 7, 23, 2, 19, 53, 899);
             // 
-            // dgvPurches
-            // 
-            this.dgvPurches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPurches.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPurches.Location = new System.Drawing.Point(3, 128);
-            this.dgvPurches.Name = "dgvPurches";
-            this.dgvPurches.Size = new System.Drawing.Size(657, 487);
-            this.dgvPurches.TabIndex = 2;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -688,18 +726,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 661);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Small", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(445, -41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 28);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Customer Information";
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -711,6 +737,25 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Purchase Page";
             // 
+            // txtInvestment
+            // 
+            this.txtInvestment.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtInvestment.Location = new System.Drawing.Point(147, 388);
+            this.txtInvestment.Name = "txtInvestment";
+            this.txtInvestment.ReadOnly = true;
+            this.txtInvestment.Size = new System.Drawing.Size(201, 29);
+            this.txtInvestment.TabIndex = 59;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(36, 391);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(89, 21);
+            this.bunifuCustomLabel8.TabIndex = 58;
+            this.bunifuCustomLabel8.Text = "TotalCost :";
+            // 
             // Purches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -720,14 +765,15 @@
             this.Name = "Purches";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purches";
+            this.Load += new System.EventHandler(this.Purches_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPurches)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -740,12 +786,10 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnAdd;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.Button btnSearch;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtUnit;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
         private Bunifu.Framework.UI.BunifuThinButton2 btnUpdate;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtSPrice;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtBrand;
@@ -757,11 +801,9 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtAmount;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtBPrice;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtType;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtBDate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Panel panel2;
@@ -769,13 +811,17 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         private Bunifu.Framework.UI.BunifuDatepicker dtpLDTo;
         private Bunifu.Framework.UI.BunifuDatepicker dtpLDFrom;
-        private System.Windows.Forms.DataGridView dgvPurches;
         private System.Windows.Forms.Button btnLSearch;
         private Bunifu.Framework.UI.BunifuDropdown drpSearch;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
         private Bunifu.Framework.UI.BunifuTextbox txtSearch;
-        private Bunifu.Framework.UI.BunifuTextbox txtLSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpPurchaseDate;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvPurchase;
+        private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.TextBox txtInvestment;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
     }
 }

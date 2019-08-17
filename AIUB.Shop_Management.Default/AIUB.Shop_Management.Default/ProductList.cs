@@ -61,16 +61,24 @@ namespace AIUB.Shop_Management.Default
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string query = "delete from ProductList  where ProductId='" + txtID.Text + "'";
-            
-
-            if(MessageBox.Show("Are you sure?", "confirm.", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            try
             {
-                DBConnection.ExecuteQuery(query);
-                MessageBox.Show("Successfully Deleted", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string query = "delete from ProductList  where ProductId='" + txtID.Text + "'";
+
+
+                if (MessageBox.Show("Are you sure?", "confirm.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DBConnection.ExecuteQuery(query);
+                    MessageBox.Show("Successfully Deleted", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                LoadProductList();
+                Init();
             }
-            LoadProductList();
-            Init();
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvProductList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -126,42 +134,66 @@ namespace AIUB.Shop_Management.Default
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(drpSearchBy.selectedValue=="Type")
+            if (cmboSearchBy.SelectedItem == "Type")
             {
                 string query = "select * from ProductList where Type = '" + txtSerach.text + "'";
                 DataTable dt = DBConnection.GetDataTable(query);
                 dgvProductList.DataSource = dt;
                 dgvProductList.Refresh();
             }
-            
-            else if(drpSearchBy.selectedValue=="Brand")
+
+            else if ((cmboSearchBy.SelectedItem).ToString() == "Brand")
             {
                 string query = "select * from ProductList where Brand = '" + txtSerach.text + "'";
                 DataTable dt = DBConnection.GetDataTable(query);
                 dgvProductList.DataSource = dt;
                 dgvProductList.Refresh();
             }
-            else if (drpSearchBy.selectedValue == "Name")
+            else if (cmboSearchBy.SelectedItem == "Name")
             {
                 string query = "select * from ProductList where Name = '" + txtSerach.text + "'";
                 DataTable dt = DBConnection.GetDataTable(query);
                 dgvProductList.DataSource = dt;
                 dgvProductList.Refresh();
             }
-            else if (drpSearchBy.selectedValue == "ProductId")
+            else if (cmboSearchBy.SelectedItem == "ProductId")
             {
                 string query = "select * from ProductList where ProductId = '" + txtSerach.text + "'";
                 DataTable dt = DBConnection.GetDataTable(query);
                 dgvProductList.DataSource = dt;
                 dgvProductList.Refresh();
             }
-            else if (drpSearchBy.selectedValue == "BuyerName")
+            else if (cmboSearchBy.SelectedItem == "BuyerName")
             {
                 string query = "select * from ProductList where BuyerName = '" + txtSerach.text + "'";
                 DataTable dt = DBConnection.GetDataTable(query);
                 dgvProductList.DataSource = dt;
                 dgvProductList.Refresh();
             }
+            //try
+            //{
+            //    string src = drpSearchBy.selectedValue;
+            //    string query = "select * from ProductList where '" + src + "' = '" + txtSerach.text + "'";
+            //    DataTable dt = DBConnection.GetDataTable(query);
+            //    dgvProductList.DataSource = dt;
+            //    dgvProductList.Refresh();
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadProductList();
+        }
+
+        private void cmboSearchBy_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

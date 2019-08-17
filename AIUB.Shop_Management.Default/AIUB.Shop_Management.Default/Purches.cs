@@ -43,7 +43,7 @@ namespace AIUB.Shop_Management.Default
         {
             try
             {
-                string query = "select * from Product";
+                string query = "select * from Purchase";
                 DataTable dt = DBConnection.GetDataTable(query);
                 dgvPurchase.DataSource = dt;
                 dgvPurchase.Refresh();
@@ -60,9 +60,9 @@ namespace AIUB.Shop_Management.Default
             
             try
             {
-                if(drpSearch.selectedValue=="Type")
+                if(drpSearch.SelectedValue=="Type")
                 {
-                    string query = "select * from Product where Product_Type ='" + txtSearch.text + "'";
+                    string query = "select * from Purchase where Product_Type ='" + txtSearch.text + "'";
                     DataTable dt = DBConnection.GetDataTable(query);
                     dgvPurchase.DataSource = dt;
                     dgvPurchase.Refresh();
@@ -74,7 +74,7 @@ namespace AIUB.Shop_Management.Default
                    
                 }
 
-                else if(drpSearch.selectedValue=="Name")
+                else if(drpSearch.SelectedValue=="Name")
                 {
                     string query = "select * from Product where Name ='" + txtSearch.text + "'";
                     DataTable dt = DBConnection.GetDataTable(query);
@@ -87,7 +87,7 @@ namespace AIUB.Shop_Management.Default
                     }
                 }
 
-                else if (drpSearch.selectedValue == "Brand")
+                else if (drpSearch.SelectedValue == "Brand")
                 {
                     string query = "select * from Product where Brand ='" + txtSearch.text + "'";
                     DataTable dt = DBConnection.GetDataTable(query);
@@ -154,16 +154,14 @@ namespace AIUB.Shop_Management.Default
             btnAdd.Visible = false;
             btnUpdate.Visible = false;
             btnDelete.Visible = false;
-
-            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                string query = "insert into Product(Product_Type,Brand,Name,ProductId,PurchaseDate,UnitPrice,SellsPrice,PurchaseQuentity,Unit,TotalCost) "
-                + "values ('" + txtType.Text + "','" + txtBrand.Text + "','" + txtName.Text + "','" + txtProductId.Text + "','" + dtpPurchaseDate.Text + "'," + txtBPrice.Text + "," + txtSPrice.Text + "," + txtAmount.Text + ",'" + txtUnit.Text + "','"+txtInvestment.Text+"')";
+                string query = "insert into Purchase(ProductId,PurchaseDate,UnitPrice,SellsPrice,PurchaseQuentity,Unit,TotalCost) "
+                + "values ('"+ txtProductId.Text + "','" + dtpPurchaseDate.Text + "'," + txtBPrice.Text + "," + txtSPrice.Text + "," + txtAmount.Text + ",'" + txtUnit.Text + "','"+txtInvestment.Text+"')";
                 DBConnection.ExecuteQuery(query);
                 MessageBox.Show("Product : " + txtName.Text + " added Done", "Cong.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDetails();
@@ -184,16 +182,17 @@ namespace AIUB.Shop_Management.Default
         {
             if (e.RowIndex >= 0)
             {
-                string id = dgvPurchase.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string id = dgvPurchase.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string slno = dgvPurchase.Rows[e.RowIndex].Cells[0].Value.ToString();
                 try
                 {
 
-                    string query = "select * from Product where ProductId ='"+id+"'";
+                    string query = "select [Type],Brand,Name,Purchase.ProductId,SlNo,SellsPrice,PurchaseQuentity,PurchaseDate,UnitPrice,Unit from ProductList,Purchase where ProductList.ProductId='" + id + "' and Purchase.SlNo='" + slno + "'";
                     DataTable dt = DBConnection.GetDataTable(query);
 
                     if (dt.Rows.Count == 1)
                     {
-                        txtType.Text = dt.Rows[0]["Product_Type"].ToString();
+                        txtType.Text = dt.Rows[0]["Type"].ToString();
                         txtBrand.Text = dt.Rows[0]["Brand"].ToString();
                         txtName.Text = dt.Rows[0]["Name"].ToString();
                         txtProductId.Text = dt.Rows[0]["ProductId"].ToString();

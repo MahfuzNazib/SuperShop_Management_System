@@ -45,7 +45,7 @@ namespace AIUB.Shop_Management.Default
 
             //for Investment sum
 
-            string queryInvest = "select sum(TotalCost) as amount from Product where PurchaseDate= '" + dtpDate.Text + "'";
+            string queryInvest = "select sum(TotalCost) as amount from Purchase where PurchaseDate= '" + dtpDate.Text + "'";
             DataTable dtInvest = DBConnection.GetDataTable(queryInvest);
             if(dtInvest.Rows.Count==1)
             {

@@ -23,13 +23,11 @@ namespace AIUB.Shop_Management.Default
         {
            
         }
-
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        private void PageLoad()
         {
-            
-            string query = "select * from Employee where EmpId='"+txtUsername.Text+"' and [Password]='"+txtPassword.Text+"'";
+            string query = "select * from Employee where EmpId='" + txtUsername.Text + "' and [Password]='" + txtPassword.Text + "'";
             DataTable dt = DBConnection.GetDataTable(query);
-            if(dt.Rows.Count != 1)
+            if (dt.Rows.Count != 1)
             {
                 lblError.Visible = true;
                 return;
@@ -52,8 +50,14 @@ namespace AIUB.Shop_Management.Default
                 }
                 else
                     lblError.Visible = true;
-                
+
             }
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+
+            PageLoad();
 
         }
 
@@ -69,7 +73,7 @@ namespace AIUB.Shop_Management.Default
         {
             if(e.KeyCode==Keys.Enter)
             {
-                //bunifuThinButton22.Click();
+                PageLoad();
             }
         }
 
@@ -101,6 +105,11 @@ namespace AIUB.Shop_Management.Default
         private void bunifuSwitch1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }

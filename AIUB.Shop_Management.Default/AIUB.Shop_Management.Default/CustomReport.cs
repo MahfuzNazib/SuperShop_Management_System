@@ -45,7 +45,7 @@ namespace AIUB.Shop_Management.Default
 
             //investment sum
 
-            string queryinvest = "select sum(TotalCost) as amount from Product where PurchaseDate between '"+dtpFrom.Text+"' and '"+dtpTo.Text+"'";
+            string queryinvest = "select sum(TotalCost) as amount from Purchase where PurchaseDate between '"+dtpFrom.Text+"' and '"+dtpTo.Text+"'";
             DataTable dtinvest = DBConnection.GetDataTable(queryinvest);
 
             if (dtinvest.Rows.Count == 1)

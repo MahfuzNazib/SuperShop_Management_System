@@ -241,6 +241,7 @@
             this.txtPassword.Size = new System.Drawing.Size(300, 33);
             this.txtPassword.TabIndex = 7;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // swt
             // 

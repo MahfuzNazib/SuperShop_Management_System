@@ -40,7 +40,7 @@ namespace AIUB.Shop_Management.Default
 
             //for Investment Estimate
 
-            string queryInvest = "select sum(TotalCost) as amount from Product";
+            string queryInvest = "select sum(TotalCost) as amount from Purchase";
             DataTable dtInvest = DBConnection.GetDataTable(queryInvest);
 
             if(dtInvest.Rows.Count==1)

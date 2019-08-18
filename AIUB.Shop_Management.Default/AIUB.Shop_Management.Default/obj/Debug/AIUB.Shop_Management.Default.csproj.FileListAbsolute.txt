@@ -77,4 +77,3 @@ F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Sh
 F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.csproj.GenerateResource.Cache
 F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.exe
 F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.pdb
-F:\AIUB Program\8th semester\2.Final Term\C#\AIUB.Shop_Management_System\AIUB.Shop_Management.Default\AIUB.Shop_Management.Default\obj\Debug\AIUB.Shop_Management.Default.csprojResolveAssemblyReference.cache

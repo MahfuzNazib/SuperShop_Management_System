@@ -13,6 +13,8 @@ namespace AIUB.Shop_Management.Default
 {
     public partial class Purches : Form
     {
+        private int slnoCount;
+
         public Purches()
         {
             InitializeComponent();
@@ -60,71 +62,12 @@ namespace AIUB.Shop_Management.Default
             
             try
             {
-                if(drpSearch.SelectedValue=="Type")
-                {
-                    string query = "select * from Purchase where Product_Type ='" + txtSearch.text + "'";
+                    string query = "select * from Purchase where ProductId ='" + txtSearch.text + "'";
                     DataTable dt = DBConnection.GetDataTable(query);
                     dgvPurchase.DataSource = dt;
                     dgvPurchase.Refresh();
-
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("This Type of Product does not exist", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                   
-                }
-
-                else if(drpSearch.SelectedValue=="Name")
-                {
-                    string query = "select * from Product where Name ='" + txtSearch.text + "'";
-                    DataTable dt = DBConnection.GetDataTable(query);
-                    dgvPurchase.DataSource = dt;
-                    dgvPurchase.Refresh();
-
-                    if (dt.Rows.Count != 1)
-                    {
-                        MessageBox.Show("Invalid Product Name", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                else if (drpSearch.SelectedValue == "Brand")
-                {
-                    string query = "select * from Product where Brand ='" + txtSearch.text + "'";
-                    DataTable dt = DBConnection.GetDataTable(query);
-                    dgvPurchase.DataSource = dt;
-                    dgvPurchase.Refresh();
-
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Invalid Product Brand", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    string query = "select * from Product where ProductId ='" + txtSearch.text + "'";
-                    DataTable dt = DBConnection.GetDataTable(query);
-                    dgvPurchase.DataSource = dt;
-                    dgvPurchase.Refresh();
-
-                    if (dt.Rows.Count == 1)
-                    {
-                        txtType.Text = dt.Rows[0]["Product_Type"].ToString();
-                        txtBrand.Text = dt.Rows[0]["Brand"].ToString();
-                        txtName.Text = dt.Rows[0]["Name"].ToString();
-                        txtProductId.Text = dt.Rows[0]["ProductId"].ToString();
-                        txtBPrice.Text = dt.Rows[0]["UnitPrice"].ToString();
-                        txtSPrice.Text = dt.Rows[0]["SellsPrice"].ToString();
-                        txtAmount.Text = dt.Rows[0]["PurchaseQuentity"].ToString();
-                        txtUnit.Text = dt.Rows[0]["Unit"].ToString();
-                        dtpPurchaseDate.Text = dt.Rows[0]["PurchaseDate"].ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Id", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                
-            }
+                    //MessageBox.Show("Invalid Id", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -210,6 +153,7 @@ namespace AIUB.Shop_Management.Default
             {
                 string id = dgvPurchase.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string slno = dgvPurchase.Rows[e.RowIndex].Cells[0].Value.ToString();
+                slnoCount = Int32.Parse(slno);
                 try
                 {
 
@@ -251,11 +195,11 @@ namespace AIUB.Shop_Management.Default
             btnAdd.Visible = true;
             btnSave.Visible = false;
             btnUpdate.Visible = true;
-            //btnDelete.Visible = true;
         }
         private void btnLSearch_Click(object sender, EventArgs e)
         {
             Search();
+            Init();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -267,11 +211,10 @@ namespace AIUB.Shop_Management.Default
                 
             try
             {
-                
                 string query = "update Purchase set "+
                     "UnitPrice="+txtBPrice.Text+",SellsPrice="+txtSPrice.Text+","
                     +"PurchaseQuentity="+txtAmount.Text+",Unit='"+txtUnit.Text+" '"
-                    +" where ProductId='"+txtProductId.Text+"'";
+                    + " where ProductId='" + txtProductId.Text + "' and SlNo= " + slnoCount + "";
                 DBConnection.ExecuteQuery(query);
                 MessageBox.Show("Successfully Updated", "Cong.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDetails();
@@ -280,8 +223,7 @@ namespace AIUB.Shop_Management.Default
             {
                 MessageBox.Show(ex.Message);
             }
-            
-            
+           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -400,9 +342,11 @@ namespace AIUB.Shop_Management.Default
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+
             Init();
             txtName.Enabled = txtBrand.Enabled = txtProductId.Enabled = txtBuyerName.Enabled = true;
             txtType.ReadOnly = false;
+            LoadDetails();
         }
 
         private void txtBuyerName_KeyDown(object sender, KeyEventArgs e)
@@ -413,6 +357,10 @@ namespace AIUB.Shop_Management.Default
             }
         }
 
+        private void txtBuyerName_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

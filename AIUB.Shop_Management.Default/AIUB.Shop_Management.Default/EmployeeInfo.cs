@@ -224,6 +224,9 @@ namespace AIUB.Shop_Management.Default
                     MessageBox.Show(ex.Message);
                 }
             }
+
+            btnAdd.Visible = btnUpdate.Visible = btnDelete.Visible = true;
+            btnSave.Visible = false;
         }
 
         private void txtStatus_TextChanged(object sender, EventArgs e)

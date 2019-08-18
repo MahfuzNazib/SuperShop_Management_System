@@ -52,7 +52,7 @@ namespace AIUB.Shop_Management.Default
             
         }
 
-        private void btnProduct_Click(object sender, EventArgs e) //Open ProductInfo Page
+        private void ProductInfoLoad()
         {
             ProductInfo p = new ProductInfo();
             p.TopLevel = false;
@@ -63,6 +63,11 @@ namespace AIUB.Shop_Management.Default
             this.panelDisplay.Controls.Clear();//Clear panelDisplay
             this.panelDisplay.Controls.Add(p);
             p.Show();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e) //Open ProductInfo Page
+        {
+            ProductInfoLoad();   
         }
 
         private void btnCustomer_Click(object sender, EventArgs e) //Open CustomerInfo Page
@@ -80,7 +85,7 @@ namespace AIUB.Shop_Management.Default
 
         private void btnSettings_Click(object sender, EventArgs e) //Open Settings Page
         {
-            Settings s = new Settings();
+            BillingSystem s = new BillingSystem();
           
             s.TopLevel = false;
             s.AutoScroll = true;
@@ -103,6 +108,12 @@ namespace AIUB.Shop_Management.Default
             this.panelDisplay.Controls.Clear();
             this.panelDisplay.Controls.Add(c);
             c.Show();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+            ProductInfoLoad();
         }
     }
 }

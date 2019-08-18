@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyReport));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyReport));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.lblTaka = new System.Windows.Forms.Label();
+            this.lblPAmount = new System.Windows.Forms.Label();
+            this.lblLoss = new System.Windows.Forms.Label();
             this.txtInvestment = new System.Windows.Forms.TextBox();
             this.txtTotalSells = new System.Windows.Forms.TextBox();
             this.lblProfit = new System.Windows.Forms.Label();
@@ -46,10 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnLoad = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.lblTaka = new System.Windows.Forms.Label();
-            this.lblPAmount = new System.Windows.Forms.Label();
-            this.lblLoss = new System.Windows.Forms.Label();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyReport)).BeginInit();
@@ -90,6 +90,68 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1178, 55);
             this.panel1.TabIndex = 5;
+            // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 8;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "Download PDF";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 8;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(951, 0);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 51);
+            this.bunifuThinButton21.TabIndex = 5;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
+            // lblTaka
+            // 
+            this.lblTaka.AutoSize = true;
+            this.lblTaka.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaka.ForeColor = System.Drawing.Color.Green;
+            this.lblTaka.Location = new System.Drawing.Point(887, 18);
+            this.lblTaka.Name = "lblTaka";
+            this.lblTaka.Size = new System.Drawing.Size(41, 20);
+            this.lblTaka.TabIndex = 2;
+            this.lblTaka.Text = "Taka";
+            this.lblTaka.Visible = false;
+            // 
+            // lblPAmount
+            // 
+            this.lblPAmount.AutoSize = true;
+            this.lblPAmount.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPAmount.ForeColor = System.Drawing.Color.Green;
+            this.lblPAmount.Location = new System.Drawing.Point(802, 18);
+            this.lblPAmount.Name = "lblPAmount";
+            this.lblPAmount.Size = new System.Drawing.Size(90, 20);
+            this.lblPAmount.TabIndex = 3;
+            this.lblPAmount.Text = "000000000";
+            this.lblPAmount.Visible = false;
+            // 
+            // lblLoss
+            // 
+            this.lblLoss.AutoSize = true;
+            this.lblLoss.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoss.ForeColor = System.Drawing.Color.Crimson;
+            this.lblLoss.Location = new System.Drawing.Point(757, 16);
+            this.lblLoss.Name = "lblLoss";
+            this.lblLoss.Size = new System.Drawing.Size(40, 20);
+            this.lblLoss.TabIndex = 4;
+            this.lblLoss.Text = "Loss";
+            this.lblLoss.Visible = false;
             // 
             // txtInvestment
             // 
@@ -266,68 +328,6 @@
             this.btnLoad.TabIndex = 4;
             this.btnLoad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // lblTaka
-            // 
-            this.lblTaka.AutoSize = true;
-            this.lblTaka.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaka.ForeColor = System.Drawing.Color.Green;
-            this.lblTaka.Location = new System.Drawing.Point(887, 18);
-            this.lblTaka.Name = "lblTaka";
-            this.lblTaka.Size = new System.Drawing.Size(41, 20);
-            this.lblTaka.TabIndex = 2;
-            this.lblTaka.Text = "Taka";
-            this.lblTaka.Visible = false;
-            // 
-            // lblPAmount
-            // 
-            this.lblPAmount.AutoSize = true;
-            this.lblPAmount.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPAmount.ForeColor = System.Drawing.Color.Green;
-            this.lblPAmount.Location = new System.Drawing.Point(802, 18);
-            this.lblPAmount.Name = "lblPAmount";
-            this.lblPAmount.Size = new System.Drawing.Size(90, 20);
-            this.lblPAmount.TabIndex = 3;
-            this.lblPAmount.Text = "000000000";
-            this.lblPAmount.Visible = false;
-            // 
-            // lblLoss
-            // 
-            this.lblLoss.AutoSize = true;
-            this.lblLoss.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoss.ForeColor = System.Drawing.Color.Crimson;
-            this.lblLoss.Location = new System.Drawing.Point(756, 18);
-            this.lblLoss.Name = "lblLoss";
-            this.lblLoss.Size = new System.Drawing.Size(40, 20);
-            this.lblLoss.TabIndex = 4;
-            this.lblLoss.Text = "Loss";
-            this.lblLoss.Visible = false;
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 8;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Download PDF";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 8;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(951, 0);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 51);
-            this.bunifuThinButton21.TabIndex = 5;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
             // DailyReport
             // 

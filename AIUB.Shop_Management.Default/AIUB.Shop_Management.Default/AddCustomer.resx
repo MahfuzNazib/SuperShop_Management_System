@@ -708,18 +708,6 @@
         /wd6XpYF4oDoJgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnSave.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIwAAABACAYAAADI6p/xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVHhe7d0/K8VhGMdhr8hm8ga8AVlMrGZmK4M/g8F2
-        UhKLkuUUSSyoM0jJQCkDk2Q4MTz6PadO1K+c735ddS/3s36612esQEAwRARDRDBEBENEMESGwVw89sr8
-        3nIZX50x5s80XRzentVOajAnD1d1ef18V5fwW9PF4tFG2bk5HgQz3Vkq969P9RHafPQ/y+Tm3CCY5uzA
-        f5pOBMPIBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0Qw
-        RARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ2QY
-        zNT2Qnl5f6tLaNP//ioTa7ODYLYuD8rKaac+QJv9Xrf+ylaDaayf79aTY0zbNLE0V2YYDIxCMEQEQ0Qw
-        RARDoJQfLMKrbNWWLsgAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnReset.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAI0AAABACAYAAAAnKPTPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -730,6 +718,18 @@
         iYaYaIiJhphoiImGmGiIiYaYaIiJhphoiImGmGiIiYaYaIiJhphoiImGmGiIiYaYaIiJhphoiImGWBvN
         1PZCef14r0voMvj5LhNrs8Notq4OyspZrz5Al/3+Sf1drkbTWL/YrafHmK5pgmmuTRsNjEo0xERDTDTE
         REOolF+pM6ahhDAkJQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSave.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIwAAABACAYAAADI6p/xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVHhe7d0/K8VhGMdhr8hm8ga8AVlMrGZmK4M/g8F2
+        UhKLkuUUSSyoM0jJQCkDk2Q4MTz6PadO1K+c735ddS/3s36612esQEAwRARDRDBEBENEMESGwVw89sr8
+        3nIZX50x5s80XRzentVOajAnD1d1ef18V5fwW9PF4tFG2bk5HgQz3Vkq969P9RHafPQ/y+Tm3CCY5uzA
+        f5pOBMPIBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0Qw
+        RARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ0QwRARDRDBEBENEMEQEQ2QY
+        zNT2Qnl5f6tLaNP//ioTa7ODYLYuD8rKaac+QJv9Xrf+ylaDaayf79aTY0zbNLE0V2YYDIxCMEQEQ0Qw
+        RARDoJQfLMKrbNWWLsgAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

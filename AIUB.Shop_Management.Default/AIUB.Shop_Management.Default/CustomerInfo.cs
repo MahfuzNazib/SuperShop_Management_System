@@ -130,6 +130,7 @@ namespace AIUB.Shop_Management.Default
                     MessageBox.Show(ex.Message);
                 }
             }
+            btnNewCustomer.Visible = true;
         }
 
         private void btnNewCustomer_Click(object sender, EventArgs e)
@@ -138,6 +139,7 @@ namespace AIUB.Shop_Management.Default
             btnDelete.Visible = false;
             btnUpdate.Visible = false;
             txtCustomerId.ReadOnly = true;
+            btnNewCustomer.Visible = false;
             txtCustomerId.Text=txtCustomerName.Text = txtCustomerContact.Text = txtTotalPoint.Text = txtSearch.text = "";
 
         }

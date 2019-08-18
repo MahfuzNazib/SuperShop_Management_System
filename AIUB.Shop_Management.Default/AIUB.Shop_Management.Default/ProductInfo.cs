@@ -127,7 +127,7 @@ namespace AIUB.Shop_Management.Default
 
         private void aDMINToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            ShowProductInfoPanel();
+            //ShowProductInfoPanel();
         }
 
         private void pRODUCTLISTSToolStripMenuItem_Click(object sender, EventArgs e)

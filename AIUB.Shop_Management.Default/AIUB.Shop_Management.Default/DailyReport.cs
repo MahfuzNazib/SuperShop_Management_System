@@ -28,6 +28,7 @@ namespace AIUB.Shop_Management.Default
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            
             string query = "select * from Sells where SellsDate='"+dtpDate.Text+"'";
             DataTable dt = DBConnection.GetDataTable(query);
             dgvDailyReport.DataSource = dt;
@@ -51,6 +52,12 @@ namespace AIUB.Shop_Management.Default
             {
                 txtInvestment.Text = dtInvest.Rows[0]["amount"].ToString();
             }
+
+            if(txtTotalSells.Text==""  &&  txtInvestment.Text=="")
+            {
+                lblProfit.Visible = lblLoss.Visible = lblPAmount.Visible = lblTaka.Visible = lblPAmount.Visible = false;
+            }
+
         }
 
         private void txtInvestment_TextChanged(object sender, EventArgs e)

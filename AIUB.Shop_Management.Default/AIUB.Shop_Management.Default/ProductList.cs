@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using iTextSharp.text; //for ItextSharp
+using iTextSharp.text.pdf; //for ItextSharp ->> PDF
+using System.IO; //for Input and Output
 
 namespace AIUB.Shop_Management.Default
 {
@@ -21,7 +24,7 @@ namespace AIUB.Shop_Management.Default
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Init();
-            btnAdd.Visible = false;
+            
             btnUpdate.Visible = false;
             btnDelete.Visible = false;
             btnSave.Visible = true;
@@ -103,10 +106,6 @@ namespace AIUB.Shop_Management.Default
                         txtName.Text = dt.Rows[0]["Name"].ToString();
                         txtID.Text = dt.Rows[0]["ProductId"].ToString();
                         txtBuyerName.Text = dt.Rows[0]["BuyerName"].ToString();
-
-                        
-
-                        
                     }
                     else
                     {
@@ -119,7 +118,7 @@ namespace AIUB.Shop_Management.Default
                     MessageBox.Show(ex.Message);
                 }
             }
-            btnAdd.Visible = true;
+            
             btnUpdate.Visible = true;
             btnDelete.Visible = true;
             btnSave.Visible = false;
@@ -173,20 +172,7 @@ namespace AIUB.Shop_Management.Default
                 dgvProductList.DataSource = dt;
                 dgvProductList.Refresh();
             }
-            //try
-            //{
-            //    string src = drpSearchBy.selectedValue;
-            //    string query = "select * from ProductList where '" + src + "' = '" + txtSerach.text + "'";
-            //    DataTable dt = DBConnection.GetDataTable(query);
-            //    dgvProductList.DataSource = dt;
-            //    dgvProductList.Refresh();
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            
-
+           
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -206,6 +192,58 @@ namespace AIUB.Shop_Management.Default
             DataTable dt=DBConnection.GetDataTable(q);
 
             txtAvailable.Text = dt.Rows[0]["Available"].ToString();
+        }
+
+        public void exportPdf(DataGridView dgv, string filename)
+        {
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(dgv.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdftable.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+            //adding header
+
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cell);
+            }
+
+            //add data row
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdftable.AddCell(new Phrase(cell.Value.ToString(), text));
+                }
+            }
+
+            var savefiledialoge = new SaveFileDialog();
+            savefiledialoge.FileName = filename;
+            savefiledialoge.DefaultExt = ".pdf";
+            if (savefiledialoge.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(savefiledialoge.FileName, FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    PdfWriter.GetInstance(pdfdoc, stream);
+                    pdfdoc.Open();
+                    pdfdoc.Add(pdftable);
+                    pdfdoc.Close();
+                    stream.Close();
+                }
+            }
+        }
+
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            exportPdf(dgvProductList, "Product List Pdf");
         }
     }
 }

@@ -109,7 +109,7 @@
             this.btnSettings.BackColor = System.Drawing.Color.Transparent;
             this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSettings.BorderRadius = 0;
-            this.btnSettings.ButtonText = "Settings";
+            this.btnSettings.ButtonText = "Billing";
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.DisabledColor = System.Drawing.Color.Gray;
             this.btnSettings.Iconcolor = System.Drawing.Color.Transparent;
@@ -130,9 +130,9 @@
             this.btnSettings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSettings.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSettings.selected = false;
-            this.btnSettings.Size = new System.Drawing.Size(140, 48);
+            this.btnSettings.Size = new System.Drawing.Size(143, 48);
             this.btnSettings.TabIndex = 6;
-            this.btnSettings.Text = "Settings";
+            this.btnSettings.Text = "Billing";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSettings.Textcolor = System.Drawing.Color.White;
             this.btnSettings.TextFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,6 +359,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelSideMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();

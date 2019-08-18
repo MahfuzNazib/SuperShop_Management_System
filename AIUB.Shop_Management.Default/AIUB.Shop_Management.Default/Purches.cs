@@ -27,7 +27,7 @@ namespace AIUB.Shop_Management.Default
 
         private void Init()
         {
-            txtType.Text = txtBrand.Text = txtAmount.Text = txtBPrice.Text = txtBrand.Text = txtSearch.text = txtName.Text = txtProductId.Text = txtSPrice.Text = txtType.Text = txtUnit.Text = txtInvestment.Text="";
+            txtType.Text = txtBuyerName.Text = txtBrand.Text = txtAmount.Text = txtBPrice.Text = txtBrand.Text = txtSearch.text = txtName.Text = txtProductId.Text = txtSPrice.Text = txtType.Text = txtUnit.Text = txtInvestment.Text= "" ;
 
         }
 
@@ -36,7 +36,7 @@ namespace AIUB.Shop_Management.Default
             btnSave.Visible=false;
             btnAdd.Visible = true;
             btnUpdate.Visible = true;
-            btnDelete.Visible = true;
+            //btnDelete.Visible = true;
         }
 
         private void LoadDetails()
@@ -148,27 +148,53 @@ namespace AIUB.Shop_Management.Default
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Init(); //Clear all Data
+            //Init(); //Clear all Data
 
             btnSave.Visible = true;
             btnAdd.Visible = false;
             btnUpdate.Visible = false;
-            btnDelete.Visible = false;
+            //btnDelete.Visible = false;
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            
+            if (txtProductId.Enabled)
             {
-                string query = "insert into Purchase(ProductId,PurchaseDate,UnitPrice,SellsPrice,PurchaseQuentity,Unit,TotalCost) "
-                + "values ('"+ txtProductId.Text + "','" + dtpPurchaseDate.Text + "'," + txtBPrice.Text + "," + txtSPrice.Text + "," + txtAmount.Text + ",'" + txtUnit.Text + "','"+txtInvestment.Text+"')";
-                DBConnection.ExecuteQuery(query);
-                MessageBox.Show("Product : " + txtName.Text + " added Done", "Cong.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadDetails();
+                try
+                {
+                    
+
+                    string query = "insert into ProductList ([Type],Brand,Name,ProductId,BuyerName) "+
+                        "values('" + txtType.Text + "','" + txtBrand.Text + "','" + txtName.Text + "','" + txtProductId.Text + "','" + txtBuyerName.Text+ "')";
+                    DBConnection.ExecuteQuery(query);
+
+                    query = "insert into Purchase(ProductId,PurchaseDate,UnitPrice,SellsPrice,PurchaseQuentity,Unit,TotalCost) "
+                    + "values ('" + txtProductId.Text + "','" + dtpPurchaseDate.Text + "'," + txtBPrice.Text + "," + txtSPrice.Text + "," + txtAmount.Text + ",'" + txtUnit.Text + "','" + txtInvestment.Text + "')";
+                    DBConnection.ExecuteQuery(query);
+                    MessageBox.Show("Product : " + txtName.Text + " added Done", "Cong.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDetails();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    string query = "insert into Purchase(ProductId,PurchaseDate,UnitPrice,SellsPrice,PurchaseQuentity,Unit,TotalCost) "
+                    + "values ('" + txtProductId.Text + "','" + dtpPurchaseDate.Text + "'," + txtBPrice.Text + "," + txtSPrice.Text + "," + txtAmount.Text + ",'" + txtUnit.Text + "','" + txtInvestment.Text + "')";
+                    DBConnection.ExecuteQuery(query);
+                    MessageBox.Show("Product : " + txtName.Text + " added Done", "Cong.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDetails();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             
         }
@@ -187,7 +213,7 @@ namespace AIUB.Shop_Management.Default
                 try
                 {
 
-                    string query = "select [Type],Brand,Name,Purchase.ProductId,SlNo,SellsPrice,PurchaseQuentity,PurchaseDate,UnitPrice,Unit from ProductList,Purchase where ProductList.ProductId='" + id + "' and Purchase.SlNo='" + slno + "'";
+                    string query = "select [Type],Brand,Name,BuyerName,Purchase.ProductId,SlNo,SellsPrice,PurchaseQuentity,PurchaseDate,UnitPrice,Unit from ProductList,Purchase where ProductList.ProductId='" + id + "' and Purchase.SlNo='" + slno + "'";
                     DataTable dt = DBConnection.GetDataTable(query);
 
                     if (dt.Rows.Count == 1)
@@ -201,6 +227,7 @@ namespace AIUB.Shop_Management.Default
                         txtAmount.Text = dt.Rows[0]["PurchaseQuentity"].ToString();
                         txtUnit.Text = dt.Rows[0]["Unit"].ToString();
                         dtpPurchaseDate.Text = dt.Rows[0]["PurchaseDate"].ToString();
+                        txtBuyerName.Text = dt.Rows[0]["BuyerName"].ToString();
                         
                     }
                     else
@@ -216,13 +243,15 @@ namespace AIUB.Shop_Management.Default
                 }
             }
             btnControl();
+            txtName.Enabled = txtBrand.Enabled = txtProductId.Enabled = txtBuyerName.Enabled = false;
+            txtType.ReadOnly = true;
         }
         public void btnControl()
         {
             btnAdd.Visible = true;
             btnSave.Visible = false;
             btnUpdate.Visible = true;
-            btnDelete.Visible = true;
+            //btnDelete.Visible = true;
         }
         private void btnLSearch_Click(object sender, EventArgs e)
         {
@@ -239,8 +268,8 @@ namespace AIUB.Shop_Management.Default
             try
             {
                 
-                string query = "update Product set Product_Type='"+txtType.Text+"',Brand='"+txtBrand.Text+"',Name='"+txtName.Text+"',"
-                    +"PurchaseDate='"+dtpPurchaseDate.Text+"',UnitPrice="+txtBPrice.Text+",SellsPrice="+txtSPrice.Text+","
+                string query = "update Purchase set "+
+                    "UnitPrice="+txtBPrice.Text+",SellsPrice="+txtSPrice.Text+","
                     +"PurchaseQuentity="+txtAmount.Text+",Unit='"+txtUnit.Text+" '"
                     +" where ProductId='"+txtProductId.Text+"'";
                 DBConnection.ExecuteQuery(query);
@@ -257,21 +286,7 @@ namespace AIUB.Shop_Management.Default
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtProductId.Text == "")
-            {
-                MessageBox.Show("Please Select a Product First", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            try
-            {
-                string query = "delete from Product where ProductId='" + txtProductId.Text + "'";
-                DBConnection.ExecuteQuery(query);
-                MessageBox.Show("Successfully Deleted", "Cong.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadDetails();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //
             
         }
 
@@ -337,7 +352,7 @@ namespace AIUB.Shop_Management.Default
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtBPrice.Focus();
+                txtBuyerName.Focus();
             }
         }
 
@@ -381,6 +396,21 @@ namespace AIUB.Shop_Management.Default
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Init();
+            txtName.Enabled = txtBrand.Enabled = txtProductId.Enabled = txtBuyerName.Enabled = true;
+            txtType.ReadOnly = false;
+        }
+
+        private void txtBuyerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBPrice.Focus();
+            }
         }
 
 

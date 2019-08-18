@@ -58,7 +58,7 @@ namespace AIUB.Shop_Management.Default
             {
                 SqlConnection con = new SqlConnection("Data Source=NAZIBMAHFUZ;Initial Catalog=SuperShopManagementSystem;Integrated Security=True");
                 con.Open();
-                string query = "select Name,Purchase.ProductId,SellsPrice,UnitPrice,Unit from ProductList,Purchase where ProductList.ProductId='"+txtProductId.Text+"' and Purchase.SlNo = (select MAX(SlNo) from Purchase)";
+                string query = "select Name,Purchase.ProductId,SellsPrice,UnitPrice,Unit from ProductList,Purchase where ProductList.ProductId='" + txtProductId.Text + "' and Purchase.SlNo = (select MAX(SlNo) from Purchase where Purchase.ProductId='" + txtProductId.Text+ "'  )";
                 SqlCommand cmd = new SqlCommand(query, con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);

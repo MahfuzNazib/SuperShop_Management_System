@@ -103,6 +103,9 @@ namespace AIUB.Shop_Management.Default
                         txtName.Text = dt.Rows[0]["Name"].ToString();
                         txtID.Text = dt.Rows[0]["ProductId"].ToString();
                         txtBuyerName.Text = dt.Rows[0]["BuyerName"].ToString();
+
+                        
+
                         
                     }
                     else
@@ -194,6 +197,15 @@ namespace AIUB.Shop_Management.Default
         private void cmboSearchBy_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            string q = "select (select SUM(PurchaseQuentity) from Purchase where ProductId='" + txtID.Text + "')-"
+                            + "(select SUM(Qnty) from Sells_Details where ProductId='" + txtID.Text + "') as Available"; 
+            DataTable dt=DBConnection.GetDataTable(q);
+
+            txtAvailable.Text = dt.Rows[0]["Available"].ToString();
         }
     }
 }

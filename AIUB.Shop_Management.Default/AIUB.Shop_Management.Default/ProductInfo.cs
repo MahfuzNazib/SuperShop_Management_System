@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace AIUB.Shop_Management.Default
 {
@@ -141,5 +142,97 @@ namespace AIUB.Shop_Management.Default
             this.panelDisplay.Controls.Add(pl);
             pl.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ProductInfo_Load(object sender, EventArgs e)
+        {
+            LoadSellsChart();
+            LoadInventoryChart();
+            LoadReportChart();
+            LoadProductChart();
+        }
+
+        private void LoadSellsChart()
+        {
+            string query = "select ProductId ,sum(Qnty) from Sells_Details group by ProductId";
+            SqlDataReader dr;
+            dr = DBConnection.getReader(query);
+            try
+            {
+
+                while (dr.Read())
+                {
+                    this.chrtTopSells.Series["Series1"].Points.AddXY(dr.GetString(0), dr.GetDouble(1));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LoadInventoryChart()
+        {
+            string query = "select ProductId ,sum(PurchaseQuentity) from Purchase group by ProductId";
+            SqlDataReader dr;
+            dr = DBConnection.getReader(query);
+            try
+            {
+
+                while (dr.Read())
+                {
+                    this.chartInv.Series["Series1"].Points.AddXY(dr.GetString(0), dr.GetDouble(1));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LoadReportChart()
+        {
+            string query = "select  SellsDate ,sum(NetAmount) from Sells group by SellsDate";
+            SqlDataReader dr;
+            dr = DBConnection.getReader(query);
+            try
+            {
+
+                while (dr.Read())
+                {
+                    this.chartReport.Series["Series1"].Points.AddXY(dr.GetString(0), dr.GetDecimal(1));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LoadProductChart()
+        {
+            DateTime dt = DateTime.Now;
+            string dtString = dt.ToShortDateString();
+            string query = "select SellsDate ,Name,sum(Amount) from Sells,Sells_Details where Sells.Invoice = Sells_Details.Invoice and SellsDate = '" + dtString + "' group by Name,SellsDate";
+            SqlDataReader dr;
+            dr = DBConnection.getReader(query);
+            try
+            {
+
+                while (dr.Read())
+                {
+                    this.chartProduct.Series["Series1"].Points.AddXY(dr.GetString(1), dr.GetDecimal(2));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
     }
 }

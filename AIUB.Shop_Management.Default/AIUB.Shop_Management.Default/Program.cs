@@ -16,7 +16,7 @@ namespace AIUB.Shop_Management.Default
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin());
+            Application.Run(new Login());
         }
     }
 }

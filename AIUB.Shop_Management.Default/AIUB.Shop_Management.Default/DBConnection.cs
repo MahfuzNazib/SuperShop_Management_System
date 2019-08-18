@@ -55,5 +55,15 @@ namespace AIUB.Shop_Management.Default
             
         }
 
+        public static SqlDataReader getReader(string query)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, con);
+            con.Open();
+            SqlDataReader dataReader;
+
+            return command.ExecuteReader();
+        }
+
     }
 }

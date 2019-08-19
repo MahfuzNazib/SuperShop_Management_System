@@ -40,9 +40,9 @@ namespace AIUB.Shop_Management.Default
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
 
-            string query = "update ProductList set BuyerName='"+txtBuyerName.Text+"' where ProductId='"+txtID.Text+"'";
+
+            string query = "update ProductList set [Type]='"+txtType.Text+"',Brand='"+txtBrand.Text+"',Name='"+txtName.Text+"',BuyerName='" + txtBuyerName.Text + "' where ProductId='" + txtID.Text + "'";
             DBConnection.ExecuteQuery(query);
             MessageBox.Show("Buyers " + txtBuyerName.Text + " Successfully Updated", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadProductList();
@@ -86,10 +86,10 @@ namespace AIUB.Shop_Management.Default
 
         private void dgvProductList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtBrand.ReadOnly = true;
-            txtName.ReadOnly = true;
-            txtType.ReadOnly = true;
-            txtID.ReadOnly = true;
+            txtBrand.ReadOnly = false;
+            txtName.ReadOnly = false;
+            txtType.ReadOnly = false;
+            txtID.ReadOnly = false;
 
             if(e.RowIndex>=0)
             {

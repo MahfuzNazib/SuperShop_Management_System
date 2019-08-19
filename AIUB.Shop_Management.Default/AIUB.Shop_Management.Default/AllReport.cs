@@ -52,31 +52,39 @@ namespace AIUB.Shop_Management.Default
 
         private void txtInvestment_TextChanged(object sender, EventArgs e)
         {
-            double sells = Convert.ToDouble(txtTotalSells.Text);
-            double investment = Convert.ToDouble(txtInvestment.Text);
+            try
+            {
+                double sells = Convert.ToDouble(txtTotalSells.Text);
+                double investment = Convert.ToDouble(txtInvestment.Text);
 
-            if (sells > investment)
-            {
-                lblProfit.Visible = true;
-                double amt = sells - investment;
-                lblPAmount.Text = amt.ToString();
-                lblTaka.Visible = true;
-                lblPAmount.Visible = true;
-            }
+                if (sells > investment)
+                {
+                    lblProfit.Visible = true;
+                    double amt = sells - investment;
+                    lblPAmount.Text = amt.ToString();
+                    lblTaka.Visible = true;
+                    lblPAmount.Visible = true;
+                }
 
-            else if(sells<investment)
-            {
-                lblProfit.Visible = false;
-                lblLoss.Visible = true;
-                double amt = sells - investment;
-                lblPAmount.Text = amt.ToString();
-                lblPAmount.Visible = true;
-                lblTaka.Visible = true;
+                else if (sells < investment)
+                {
+                    lblProfit.Visible = false;
+                    lblLoss.Visible = true;
+                    double amt = sells - investment;
+                    lblPAmount.Text = amt.ToString();
+                    lblPAmount.Visible = true;
+                    lblTaka.Visible = true;
+                }
+                else
+                {
+                    //nothing to do;
+                }
             }
-            else
+            catch(Exception ex)
             {
-                //nothing to do;
+                MessageBox.Show(ex.Message);
             }
+            
 
             
         }

@@ -41,7 +41,6 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.swt = new Bunifu.Framework.UI.BunifuSwitch();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,6 +89,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(424, 553);
             this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // panel1
             // 
@@ -221,7 +221,6 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.08134F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.91866F));
             this.tableLayoutPanel4.Controls.Add(this.txtPassword, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.swt, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 331);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -242,23 +241,6 @@
             this.txtPassword.TabIndex = 7;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
-            // 
-            // swt
-            // 
-            this.swt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.swt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.swt.BorderRadius = 0;
-            this.swt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.swt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.swt.Location = new System.Drawing.Point(366, 20);
-            this.swt.Name = "swt";
-            this.swt.Oncolor = System.Drawing.Color.SeaGreen;
-            this.swt.Onoffcolor = System.Drawing.Color.DarkGray;
-            this.swt.Size = new System.Drawing.Size(51, 19);
-            this.swt.TabIndex = 8;
-            this.swt.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.swt.Value = true;
-            this.swt.Click += new System.EventHandler(this.bunifuSwitch1_Click);
             // 
             // Login
             // 
@@ -301,7 +283,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox txtPassword;
-        private Bunifu.Framework.UI.BunifuSwitch swt;
     }
 }
 

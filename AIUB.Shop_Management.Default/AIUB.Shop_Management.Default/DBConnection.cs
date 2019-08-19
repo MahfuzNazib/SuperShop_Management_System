@@ -55,6 +55,8 @@ namespace AIUB.Shop_Management.Default
             
         }
 
+        //new method for DataReader 
+
         public static SqlDataReader getReader(string query)
         {
             SqlConnection con = new SqlConnection(connectionString);
